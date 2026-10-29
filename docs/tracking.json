@@ -1,0 +1,345 @@
+{
+  "updated": "2026-10-29",
+  "statusLegend": [
+    "planned",
+    "in_progress",
+    "implemented",
+    "verified",
+    "awaiting_assets",
+    "blocked"
+  ],
+  "phases": [
+    {
+      "id": "P0",
+      "name": "Environment and deployment foundation",
+      "status": "in_progress"
+    },
+    {
+      "id": "P1",
+      "name": "Design system and content migration",
+      "status": "in_progress"
+    },
+    {
+      "id": "P2",
+      "name": "Animation infrastructure",
+      "status": "planned"
+    },
+    {
+      "id": "P3",
+      "name": "Video split and 3D",
+      "status": "planned"
+    },
+    {
+      "id": "P4",
+      "name": "Enquiries and delivery",
+      "status": "planned"
+    },
+    {
+      "id": "P5",
+      "name": "Grounded chatbot",
+      "status": "planned"
+    },
+    {
+      "id": "P6",
+      "name": "SEO QA and production release",
+      "status": "planned"
+    }
+  ],
+  "components": [
+    {
+      "id": "ENV",
+      "phase": "P0",
+      "name": "Next.js / OpenNext configuration",
+      "status": "verified",
+      "owner": "Unassigned",
+      "evidence": [
+        "docs/VALIDATION.md"
+      ],
+      "nextAction": "Recheck after dependency or architecture changes"
+    },
+    {
+      "id": "CI",
+      "phase": "P0",
+      "name": "Local dependency installation and Worker build verification",
+      "status": "verified",
+      "owner": "Unassigned",
+      "evidence": [
+        "docs/VALIDATION.md"
+      ],
+      "nextAction": "Recheck after dependency or architecture changes"
+    },
+    {
+      "id": "CONFIG",
+      "phase": "P0",
+      "name": "Typed configuration contracts",
+      "status": "implemented",
+      "owner": "Unassigned",
+      "evidence": [
+        "docs/CONFIGURATION.md",
+        "src/config/"
+      ],
+      "nextAction": "Wire reserved contracts as each feature is implemented"
+    },
+    {
+      "id": "THEMES",
+      "phase": "P1",
+      "name": "Six theme routes",
+      "status": "verified",
+      "owner": "Unassigned",
+      "evidence": "Six numbered config-driven routes; route 5 default; persistent browser choice, interactive controls and readable mobile labels.",
+      "nextAction": "Client colour review."
+    },
+    {
+      "id": "LAYOUT",
+      "phase": "P1",
+      "name": "Approved header/footer and responsive layout migration",
+      "status": "verified",
+      "owner": "Unassigned",
+      "evidence": "All 15 HTML views migrated to server-rendered Next.js routes; desktop and 390px mobile browser review, no horizontal overflow on all routes. Non-sticky navigation, original vector logo and footer preserved.",
+      "nextAction": "Client review of migrated design; add approved photography and interactive hero in subsequent phases."
+    },
+    {
+      "id": "CONTENT",
+      "phase": "P1",
+      "name": "Full copy migration and client verification",
+      "status": "in_progress",
+      "owner": "Unassigned",
+      "evidence": "Client clarified quality-led acquisition, testing and approval. Homepage, About, Operations and Quality rewritten; footer, navigation and metadata updated.",
+      "nextAction": "Confirm test panels, lab status, approved claims and documentary assets."
+    },
+    {
+      "id": "FONTS",
+      "phase": "P1",
+      "name": "Approved self-hosted font migration",
+      "status": "verified",
+      "owner": "Unassigned",
+      "evidence": "Prototype Bricolage Grotesque, Hanken Grotesk and JetBrains Mono served as local WOFF2 with OFL licenses. Browser checks found no external resource requests.",
+      "nextAction": "Exact logo font identification remains separate from migrated prototype fonts."
+    },
+    {
+      "id": "MOTION",
+      "phase": "P2",
+      "name": "Lenis/GSAP provider and reduced-motion policy",
+      "status": "implemented",
+      "owner": "Unassigned",
+      "evidence": "Quality experience first pass: GSAP/Lenis lifecycle, loading-aware logo indicator, split-scroll photographic hero and common product backdrop. Reduced motion and mobile fallbacks included.",
+      "nextAction": "Browser QA and client review; final video and individual product photo sets remain pending."
+    },
+    {
+      "id": "UI",
+      "phase": "P2",
+      "name": "Motion component transitions",
+      "status": "planned",
+      "owner": "Unassigned",
+      "evidence": [],
+      "nextAction": "Implement and document acceptance evidence"
+    },
+    {
+      "id": "VIDEO",
+      "phase": "P3",
+      "name": "VideoSplitHero",
+      "status": "awaiting_assets",
+      "owner": "Unassigned",
+      "evidence": "Source-to-Extract hero concept, shot sequence, desktop/mobile poster requirements and split-scroll behaviour documented; media slots reserved in src/config/media.ts.",
+      "nextAction": "Approve or commission the 10–14 second plant-to-process-to-powder footage and its desktop/mobile crops."
+    },
+    {
+      "id": "THREE",
+      "phase": "P3",
+      "name": "R3F scene and poster fallback",
+      "status": "awaiting_assets",
+      "owner": "Unassigned",
+      "evidence": [],
+      "nextAction": "Implement and document acceptance evidence"
+    },
+    {
+      "id": "LEADS",
+      "phase": "P4",
+      "name": "D1 persistence and form validation",
+      "status": "planned",
+      "owner": "Unassigned",
+      "evidence": [],
+      "nextAction": "Implement and document acceptance evidence"
+    },
+    {
+      "id": "DELIVERY",
+      "phase": "P4",
+      "name": "Queue email and CRM integration",
+      "status": "planned",
+      "owner": "Unassigned",
+      "evidence": [],
+      "nextAction": "Implement and document acceptance evidence"
+    },
+    {
+      "id": "CHAT",
+      "phase": "P5",
+      "name": "Streaming UI and Anthropic endpoint",
+      "status": "planned",
+      "owner": "Unassigned",
+      "evidence": [],
+      "nextAction": "Implement and document acceptance evidence"
+    },
+    {
+      "id": "RAG",
+      "phase": "P5",
+      "name": "Approved knowledge ingestion and retrieval",
+      "status": "planned",
+      "owner": "Unassigned",
+      "evidence": [],
+      "nextAction": "Implement and document acceptance evidence"
+    },
+    {
+      "id": "EVALS",
+      "phase": "P5",
+      "name": "Chatbot accuracy and refusal evaluation",
+      "status": "planned",
+      "owner": "Unassigned",
+      "evidence": [],
+      "nextAction": "Implement and document acceptance evidence"
+    },
+    {
+      "id": "SEO-BASE",
+      "phase": "P6",
+      "name": "Clean routes, metadata, sitemap and robots",
+      "status": "verified",
+      "owner": "Unassigned",
+      "evidence": "15 pre-rendered content routes with titles, descriptions, canonicals; production sitemap includes company pages; 17 Worker checks pass.",
+      "nextAction": "Approved content, production structured data review and Search Console."
+    },
+    {
+      "id": "SEO-CONTENT",
+      "phase": "P6",
+      "name": "Keyword map and approved page copy",
+      "status": "planned",
+      "owner": "Unassigned",
+      "evidence": [],
+      "nextAction": "Implement and document acceptance evidence"
+    },
+    {
+      "id": "SEO-QA",
+      "phase": "P6",
+      "name": "Browser / performance / schema validation",
+      "status": "in_progress",
+      "owner": "Unassigned",
+      "evidence": "17 Worker HTTP tests and 15 mobile route checks pass; one H1 per page, no viewport overflow or external font requests.",
+      "nextAction": "Measure Core Web Vitals with final media and run production schema/crawl audit."
+    },
+    {
+      "id": "LAUNCH",
+      "phase": "P6",
+      "name": "Cloudflare deployment and Search Console",
+      "status": "planned",
+      "owner": "Unassigned",
+      "evidence": [],
+      "nextAction": "Implement and document acceptance evidence"
+    },
+    {
+      "id": "CI-REMOTE",
+      "phase": "P0",
+      "name": "Run CI in connected repository",
+      "status": "planned",
+      "owner": "Unassigned",
+      "evidence": [],
+      "nextAction": "Connect repository and run workflow"
+    },
+    {
+      "id": "IMAGERY",
+      "name": "Realistic imagery and photographic icons",
+      "phase": "P1",
+      "status": "awaiting_assets",
+      "owner": "Unassigned",
+      "evidence": "Natural, vibrant photographic policy plus a placement list, five-image set for every product and photographic mini-icon system recorded in docs/VISUAL-DIRECTION.md.",
+      "nextAction": "Build and approve the photographic art-direction board, then populate the configured hero, process and product-filmstrip asset slots."
+    },
+    {
+      "id": "PRODUCT-BACKDROP",
+      "name": "Shared botanical product-page filmstrip",
+      "phase": "P2",
+      "status": "implemented",
+      "owner": "Unassigned",
+      "evidence": "Quality experience first pass: GSAP/Lenis lifecycle, loading-aware logo indicator, split-scroll photographic hero and common product backdrop. Reduced motion and mobile fallbacks included.",
+      "nextAction": "Browser QA and client review; final video and individual product photo sets remain pending."
+    },
+    {
+      "id": "PRELOADER",
+      "name": "First-visit Extraction Drop preloader",
+      "phase": "P2",
+      "status": "implemented",
+      "owner": "Unassigned",
+      "evidence": "Quality experience first pass: GSAP/Lenis lifecycle, loading-aware logo indicator, split-scroll photographic hero and common product backdrop. Reduced motion and mobile fallbacks included.",
+      "nextAction": "Browser QA and client review; final video and individual product photo sets remain pending."
+    },
+    {
+      "id": "COLOR-CLARITY",
+      "name": "Blue + green contrast and typography refinement",
+      "phase": "P1",
+      "status": "implemented",
+      "owner": "Unassigned",
+      "evidence": "Shared theme-refinements.css and palette configuration synced to standalone HTML; TypeScript and existing tests pass.",
+      "nextAction": "Review desktop/mobile appearance during design migration; replace prototype imagery with approved photographic assets."
+    },
+    {
+      "id": "EDITORIAL-EXPERIENCE",
+      "phase": "P1",
+      "name": "Light botanical hero and editorial carousels",
+      "status": "verified",
+      "owner": "Unassigned",
+      "evidence": "Green-dominant palette with blue highlights; seven generated conceptual botanical assets; six-product and five-stage editorial galleries. Desktop arrows, numbered navigation, keyboard selection and mobile last-slide navigation checked; all 15 routes checked at 390px without overflow.",
+      "nextAction": "Client visual review and botanical/asset accuracy approval before production."
+    },
+    {
+      "id": "HOME-SCENES",
+      "phase": "P2",
+      "name": "Fullscreen homepage scenes and scroll-driven extract sequence",
+      "status": "verified",
+      "owner": "Unassigned",
+      "evidence": "Eight progressively enhanced scenes; desktop pinning and directional snapping; circular liquid-style reveals; scroll progresses through six equal product slides before release. Browser verified at 1440x1000 and 1366x768, including form access, mobile/reduced-motion fallback and pin cleanup.",
+      "nextAction": "Client review of scroll pace, slit composition and transition strength."
+    },
+    {
+      "id": "SITE-SCENES",
+      "phase": "P2",
+      "name": "Shared viewport scene experience on all content routes",
+      "status": "verified",
+      "owner": "Unassigned",
+      "evidence": "Server-rendered PageScenes and shared configurable controller deployed across company, product, catalogue and enquiry routes. Product requests, deep-link selection, client-route pin cleanup, catalogue six-product progression and mobile/reduced-motion fallbacks checked.",
+      "nextAction": "Client review of site-wide pacing and final-media performance QA."
+    },
+    {
+      "id": "FIXED-NAV",
+      "phase": "P2",
+      "name": "Persistent transparent navigation",
+      "status": "verified",
+      "owner": "Unassigned",
+      "evidence": "Fixed transparent header with configurable backdrop blur and desktop/mobile heights. Browser checked navigation from the product sequence, mobile menu closure after route change, no horizontal overflow and reserved scene content space.",
+      "nextAction": "Client review of menu appearance over final media."
+    },
+    {
+      "id": "PALETTE-READABILITY",
+      "phase": "P1",
+      "name": "Original cyan and vivid green palette with clear small text",
+      "status": "verified",
+      "owner": "Unassigned",
+      "evidence": "Restored original cyan #15DBEB and bright emerald/leaf accents in route 5. Supporting text contrast 7.99:1 or better on primary surfaces, blue links 5.17:1 or better, cyan button text 9.40:1. Supporting weight 500 and small label weight 600; viewport scenes checked for fit.",
+      "nextAction": "Client review of refreshed colour and text hierarchy."
+    },
+    {
+      "id": "PALETTE-07",
+      "phase": "P1",
+      "name": "Lime, green and blue default palette",
+      "status": "verified",
+      "owner": "Unassigned",
+      "evidence": "Added and retained numbered route 7 in Next.js and the standalone HTML. Browser verified exact configured base tokens, high-contrast lime buttons, deep green feature sections, readable supporting copy and mobile layout without horizontal overflow.",
+      "nextAction": "Retained as a solid-colour alternative to route 8."
+    },
+    {
+      "id": "PALETTE-08",
+      "phase": "P1",
+      "name": "Recommended blue-cyan-lime gradient default",
+      "status": "verified",
+      "owner": "Unassigned",
+      "evidence": "Added route 8 Gradient and made it the Next.js and standalone HTML default. Browser verified the exact #0B7CF2 → #20B8D8 → #8FD14F gradient on actions, headline highlights, feature surfaces and the complete footer at desktop and mobile sizes without horizontal overflow.",
+      "nextAction": "Client review across final photography and video."
+    }
+  ]
+}

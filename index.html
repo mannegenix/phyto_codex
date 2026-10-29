@@ -1,0 +1,1071 @@
+<!doctype html><html data-route="gradient"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}
+:root[data-route="limeblue"]{color-scheme:light;--paper:#F6FAF1;--surface:#FFFFFF;--sunk:#EDF5E4;--ink:#0E1C10;--muted:#2F4033;--heading:#12351A;--line:#CFDFC4;--accent:#8FD14F;--accent-hover:#C4F06A;--on-accent:#0E1C10;--accent-text:#0A66D6;--blue:#0B7CF2;--blue-small:#0A66D6;--blue-on-green:#7FDCFF;--olive:#2C7A12;--olive-soft:#EDF5E4;--pop:#C4F06A;--band:#2F8F2E;--band-2:#1F7A2A;--on-band:#F6FAF1;--on-band-muted:#F6FAF1;--band-eyebrow:#7FDCFF;--ok:#2C7A12;--band-btn-ring:#7FDCFF;--band-ghost:#7FDCFF;--hero-paper:#F6FAF1;--hero-glow:#C4F06A;--hero-copy:#2F4033;--hero-meta:#2F4033;--hero-divider:#CFDFC4;--specimen-caption:#2C7A12;--collection-paper:#FFFFFF;--quality-paper:#EDF5E4;--section-copy:#2F4033;--photo-paper:#EDF5E4;--panel-divider:#CFDFC4;--pagination-copy:#2F4033;--pagination-line:#CFDFC4;--arrow-border:#CFDFC4;--arrow-hover:#C4F06A;--flagship-paper:#EDF5E4;--spec-label:#2F4033;--spec-value:#0E1C10;--header-line:#CFDFC4;--header-paper:#F6FAF1;--active-nav:#C4F06A;--quality-band:#EDF5E4;}
+:root[data-route="gradient"]{color-scheme:light;--paper:#F6FAF1;--surface:#FFFFFF;--sunk:#EDF5E4;--ink:#0E1C10;--muted:#2F4033;--heading:#12351A;--line:#CFDFC4;--accent:#0B7CF2;--accent-hover:#20B8D8;--on-accent:#07120A;--accent-text:#0A66D6;--blue:#0B7CF2;--cyan:#20B8D8;--lime:#8FD14F;--light-neon:#C4F06A;--brand-gradient:linear-gradient(110deg,#0B7CF2 0%,#20B8D8 50%,#8FD14F 100%);--brand-gradient-reverse:linear-gradient(110deg,#8FD14F 0%,#20B8D8 50%,#0B7CF2 100%);--brand-gradient-soft:linear-gradient(110deg,rgba(11,124,242,.16) 0%,rgba(32,184,216,.16) 50%,rgba(143,209,79,.20) 100%);--olive:#2C7A12;--olive-soft:#EDF5E4;--pop:#8FD14F;--band:#20B8D8;--band-2:#1F7A2A;--on-band:#07120A;--on-band-muted:#0E1C10;--band-eyebrow:#07120A;--ok:#2C7A12;--band-btn-ring:#07120A;--band-ghost:#07120A;--hero-paper:#F6FAF1;--hero-glow:#C4F06A;--hero-copy:#2F4033;--hero-meta:#2F4033;--hero-divider:#CFDFC4;--specimen-caption:#0A66D6;--collection-paper:#FFFFFF;--quality-paper:#EDF5E4;--section-copy:#2F4033;--photo-paper:#EDF5E4;--panel-divider:#CFDFC4;--pagination-copy:#2F4033;--pagination-line:#CFDFC4;--arrow-border:#CFDFC4;--arrow-hover:#C4F06A;--flagship-paper:#EDF5E4;--spec-label:#2F4033;--spec-value:#0E1C10;--header-line:#CFDFC4;--header-paper:#F6FAF1;--active-nav:#C4F06A;--quality-band:#EDF5E4;}
+</style></head><body>
+<title>Phyto Elements</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Phyto Elements — India-based B2B manufacturer of bulk plant extracts for Indian and global markets.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: sticky utility header → hash-routed views; product pages are spec-sheet templates (data-driven, duplicable); forest bands punctuate sage paper. */
+/* Four colour routes switched via html[data-route]: Green light & Blue light use light backgrounds; Green dark & Blue dark use dark backgrounds. No separate dark-mode toggle. */
+:root{
+  color-scheme:light;
+  /* Base tokens (overridden by each route below) */
+  --paper:#f4f7f1; --surface:#ffffff; --sunk:#e8efe3;
+  --ink:#1c2420; --muted:#56635b; --line:#d3ddd0;
+  --accent:#0d3b2e; --accent-hover:#15583f; --on-accent:#ffffff;
+  --olive:#15583f; --olive-soft:#e2f2d4;
+  --band:#0d3b2e; --band-2:#0a2f24; --on-band:#f1f6ee; --on-band-muted:#b4c8bb; --band-eyebrow:#9bd866;
+  --note:#8a6a12; --note-bg:#fbf3d9; --ok:#1d6b45; --err:#b4372a; --accent-text:#0d3b2e; --pop:var(--olive); --heading:var(--ink);
+  --f-display:"Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Hanken Grotesk", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --wrap:1180px; --r:6px;
+  --logo-green:#114132; --logo-copper:#c37f56; --logo-vein:#8fae9f; --logo-sage:#608474;
+}
+/* Route · Green (dark): dark backgrounds, deep green with lime accents */
+:root[data-route="greens"]{color-scheme:dark;--paper:#0e1512;--surface:#151e19;--sunk:#111a15;--ink:#e3ebe4;--muted:#9caba2;--line:#26332c;--accent:#9bd866;--accent-hover:#b3e489;--on-accent:#0d1f12;--olive:#9bd866;--olive-soft:#1f2e17;--band:#0d3b2e;--band-2:#0a2f24;--on-band:#eef4ea;--on-band-muted:#a9c0b2;--band-eyebrow:#9bd866;--note:#e9c45c;--note-bg:#2a2210;--ok:#7fd1a2;--err:#f08a7e;--accent-text:#9bd866;}
+/* Route · Green (light): bright lush leaf green */
+:root[data-route="greenlight"]{color-scheme:light;--paper:#fdfcf6;--sunk:#f3f6e9;--ink:#17241a;--muted:#526456;--line:#e4e8d5;--accent:#2b8530;--accent-hover:#236e28;--on-accent:#ffffff;--accent-text:#2e7d32;--olive:#2e7d32;--olive-soft:#eaf6df;--band:#eef6e3;--band-2:#e2efd3;--on-band:#17241a;--on-band-muted:#405545;--band-eyebrow:#2e7d32;--surface:#ffffff;}
+/* Route · Blue (light): bright cyan #15DBEB, dark text on cyan */
+:root[data-route="bluelight"]{color-scheme:light;--paper:#ffffff;--sunk:#ecf9fc;--ink:#0f2629;--muted:#4b6669;--line:#d4eef3;--accent:#15dbeb;--accent-hover:#13ccdb;--on-accent:#04262a;--accent-text:#0a6f9e;--olive:#0a6f9e;--olive-soft:#e0f5fb;--band:#e8fafc;--band-2:#d5f4f7;--on-band:#0f2629;--on-band-muted:#3f5d61;--band-eyebrow:#c2410c;--ok:#0b6b52;--pop:#f04e12;--pop-soft:#fff0e4;--surface:#ffffff;--heading:#0b4f6c;}
+/* Route · Blue (dark): dark backgrounds, teal/cyan with orange accents */
+:root[data-route="bluedark"]{color-scheme:dark;--paper:#0b1517;--surface:#121e20;--sunk:#0f1a1c;--ink:#e1eef0;--muted:#97aeb1;--line:#21353a;--note:#e9c45c;--note-bg:#2a2210;--ok:#7fd1a2;--err:#f08a7e;--accent:#2fbfca;--accent-hover:#5fd2db;--on-accent:#03201f;--accent-text:#4fd0da;--olive:#ff8a4c;--olive-soft:#3a1f12;--band:#0d3f44;--band-2:#082f33;--on-band:#effafb;--on-band-muted:#b6dfe3;--band-eyebrow:#ffb627;--pop:#ff7a3d;--pop-soft:#3a1f12;}
+/* Route · Blue vivid: light page saturated with popping blues (electric blue + cyan) */
+:root[data-route="bluevivid"]{color-scheme:light;--paper:#f7fbff;--surface:#ffffff;--sunk:#e8f2ff;--ink:#0d1b33;--muted:#4a5d78;--line:#d3e3f7;--heading:#0b3b8c;--accent:#1d6bf3;--accent-hover:#0b4fd6;--on-accent:#ffffff;--accent-text:#1556d6;--olive:#0967b3;--olive-soft:#dff0ff;--pop:#00b4f0;--band:#1d6bf3;--band-2:#0a2a66;--on-band:#ffffff;--on-band-muted:#d3e5ff;--band-eyebrow:#8ff3ff;--ok:#0b6b52;--band-btn-ring:#ffffff;--band-ghost:#ffffff;}
+:root[data-route="bluevivid"] .band{background:linear-gradient(135deg,#0b4fd6 0%,#1d6bf3 45%,#14c6e6 100%)}
+:root[data-route="bluevivid"] .flag-specs div,:root[data-route="bluevivid"] .flag-art{background:rgba(6,28,92,.32)}
+:root[data-route="bluevivid"] .flag-specs{background:rgba(255,255,255,.22)}
+:root[data-route="bluevivid"] .hero h1 em{background:linear-gradient(90deg,#1d6bf3,#00b4f0 60%,#15dbeb);-webkit-background-clip:text;background-clip:text;color:transparent}
+:root[data-route="bluevivid"] .card,:root[data-route="bluevivid"] .values > div,:root[data-route="bluevivid"] .funcs li{border-top:3px solid #1d6bf3}
+:root[data-route="bluevivid"] .card:nth-child(3n+2){border-top-color:#00b4f0}
+:root[data-route="bluevivid"] .card:nth-child(3n){border-top-color:#15dbeb}
+:root[data-route="bluevivid"] .values{gap:12px;background:none;border:0}
+:root[data-route="bluevivid"] .values > div{border:1px solid var(--line);border-top:3px solid #1d6bf3;border-radius:var(--r)}
+:root[data-route="bluevivid"] .values > div:nth-child(even){border-top-color:#00b4f0}
+:root[data-route="bluevivid"] .hdr{border-bottom:3px solid transparent;border-image:linear-gradient(90deg,#1d6bf3,#15dbeb) 1}
+:root[data-route="bluevivid"] .tag-foot{background:linear-gradient(90deg,#e3efff,#dcfaff)}
+:root[data-route="bluevivid"] .kv > div{border-top-color:#00b4f0}
+:root[data-route="bluevivid"] .ph{background:linear-gradient(180deg,#e8f2ff,transparent)}
+/* Blue light: complementary blue family around the cyan (#15DBEB): ocean #0B4F6C, azure #0A9FD8, teal #0B7680 */
+:root[data-route="bluelight"] .hdr{border-bottom:3px solid transparent;border-image:linear-gradient(90deg,#15dbeb,#0a9fd8,#0b4f6c) 1}
+:root[data-route="bluelight"] .band{background:linear-gradient(135deg,#e6fafd 0%,#d3f3fa 55%,#c6e9f7 100%)}
+:root[data-route="bluelight"] .flag-specs div{background:rgba(255,255,255,.6)}
+:root[data-route="bluelight"] .band h2{color:var(--heading)}
+:root[data-route="bluelight"] .flag-art{background:rgba(255,255,255,.45)}
+:root[data-route="bluelight"] .card,:root[data-route="bluelight"] .funcs li{border-top:3px solid #15dbeb}
+:root[data-route="bluelight"] .card:nth-child(3n+2){border-top-color:#0a9fd8}
+:root[data-route="bluelight"] .card:nth-child(3n){border-top-color:#0b7680}
+:root[data-route="bluelight"] .values{gap:12px;background:none;border:0}
+:root[data-route="bluelight"] .values > div{border:1px solid var(--line);border-top:3px solid #15dbeb;border-radius:var(--r)}
+:root[data-route="bluelight"] .values > div:nth-child(3n+2){border-top-color:#0a9fd8}
+:root[data-route="bluelight"] .values > div:nth-child(3n){border-top-color:#0b7680}
+:root[data-route="bluelight"] .kv > div{border-top-color:#0a9fd8}
+:root[data-route="bluelight"] .tag-foot{background:linear-gradient(90deg,#e0f8fc,#d6eefa)}
+:root[data-route="bluelight"] .ph{background:linear-gradient(180deg,#e6f8fc,transparent)}
+:root[data-route="bluelight"] .chip.flag{border-color:#0a9fd8;color:#0a6f9e;background:#e0f5fb}
+:root[data-route="bluelight"] footer{background:linear-gradient(160deg,#0b4f6c,#0a3d55);--on-band:#ffffff;--on-band-muted:#bfe4ef}
+:root[data-route="bluelight"] footer .legal{border-color:rgba(255,255,255,.18)}
+/* Route · Blue + green: cyan #15DBEB primary with bright greens (emerald #22C55E, leaf #2FBF71, lime #7ED957) */
+:root[data-route="bluegreen"]{color-scheme:light;--paper:#ffffff;--surface:#ffffff;--sunk:#effbf7;--ink:#153d35;--muted:#304f47;--line:#cce9df;--heading:#145b3c;--accent:#15dbeb;--accent-hover:#13ccdb;--on-accent:#04262a;--accent-text:#096c98;--olive:#15803d;--olive-soft:#e3f8ea;--pop:#22c55e;--band:#dcf8e9;--band-2:#e9faf5;--on-band:#153d35;--on-band-muted:#304f47;--band-eyebrow:#126c35;--ok:#15803d;--band-btn-ring:#096c98;--band-ghost:#096c98;--hero-paper:#f0fcf6;--hero-glow:#b9f3c7;--hero-copy:#304f47;--hero-meta:#304f47;--hero-divider:#aed9c5;--specimen-caption:#126c35;--collection-paper:#fffef9;--quality-paper:#effbf7;--section-copy:#304f47;--photo-paper:#e3f8ea;--panel-divider:#cce9df;--pagination-copy:#304f47;--pagination-line:#c9d8c3;--arrow-border:#c7d9c1;--arrow-hover:#dcf8e9;--flagship-paper:#eef7e9;--spec-label:#304f47;--spec-value:#153d35;--header-line:#d9e7d2;--header-paper:#fffefb;--active-nav:#dcf8e9;--quality-band:#dcf8e9;--leaf:#2fbf71;--lime:#7ed957;}
+:root[data-route="bluegreen"] .hdr{border-bottom:3px solid transparent;border-image:linear-gradient(90deg,#15dbeb,#2fbf71,#7ed957) 1}
+:root[data-route="bluegreen"] .hero h1 em{background:linear-gradient(90deg,#0fb6c8,#22c55e 70%,#5cc93a);-webkit-background-clip:text;background-clip:text;color:transparent}
+:root[data-route="bluegreen"] .band{background:linear-gradient(135deg,#15dbeb 0%,#3fe0c0 50%,#7ed957 100%)}
+:root[data-route="bluegreen"] .band h2{color:#06343a}
+:root[data-route="bluegreen"] .flag-specs{background:rgba(255,255,255,.5)}
+:root[data-route="bluegreen"] .flag-specs div{background:rgba(255,255,255,.55)}
+:root[data-route="bluegreen"] .flag-art{background:rgba(255,255,255,.35)}
+:root[data-route="bluegreen"] .card,:root[data-route="bluegreen"] .funcs li{border-top:3px solid #15dbeb}
+:root[data-route="bluegreen"] .card:nth-child(3n+2){border-top-color:#22c55e}
+:root[data-route="bluegreen"] .card:nth-child(3n){border-top-color:#0a9fd8}
+:root[data-route="bluegreen"] .values{gap:12px;background:none;border:0}
+:root[data-route="bluegreen"] .values > div{border:1px solid var(--line);border-top:3px solid #15dbeb;border-radius:var(--r)}
+:root[data-route="bluegreen"] .values > div:nth-child(3n+2){border-top-color:#22c55e}
+:root[data-route="bluegreen"] .values > div:nth-child(3n){border-top-color:#0a9fd8}
+:root[data-route="bluegreen"] .kv > div{border-top-color:#22c55e}
+:root[data-route="bluegreen"] .tag-foot{background:linear-gradient(90deg,#dcfafd,#e3f8ea)}
+:root[data-route="bluegreen"] .ph{background:linear-gradient(180deg,#e6fbf6,transparent)}
+:root[data-route="bluegreen"] .chip.flag{border-color:#22c55e;color:#15803d;background:#e3f8ea}
+:root[data-route="bluegreen"] footer{background:linear-gradient(135deg,#0b4f6c,#0d5a48 60%,#14633a);--on-band:#ffffff;--on-band-muted:#c3e8dc}
+:root[data-route="bluegreen"] footer .legal{border-color:rgba(255,255,255,.18)}
+/* Footer logo stays full-colour on the bright cyan footer */
+  :root[data-route="greenlight"] footer{--logo-green:#114132; --logo-vein:#8fae9f; --logo-sage:#608474}
+/* Light bands in the two light routes: brand-coloured buttons, visible dividers */
+:root[data-route="greenlight"] .flag-specs, :root[data-route="bluelight"] .flag-specs{background:var(--line)}
+:root[data-route="greenlight"] footer .legal, :root[data-route="bluelight"] footer .legal, :root[data-route="greenlight"] .band .list li, :root[data-route="bluelight"] .band .list li{border-color:var(--line)}
+/* Logo reversed for dark surfaces (brand colours otherwise fixed across routes) */
+:root[data-route="greens"], :root[data-route="bluedark"], footer{--logo-green:#eef3ec; --logo-vein:#56786a; --logo-sage:#a3c3b3}
+
+
+
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--surface)}
+a{color:var(--accent-text)}
+h1,h2,h3,h4{color:var(--heading);font-family:var(--f-display);line-height:1.08;letter-spacing:-.015em;text-wrap:balance;margin:0;font-weight:600}
+p{margin:0}
+:focus-visible{outline:2px solid var(--olive);outline-offset:2px;border-radius:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--olive);font-weight:500}
+.lede{font-size:1.18rem;color:var(--muted);max-width:62ch}
+.prose{max-width:66ch;display:grid;gap:1em}
+.mono{font-family:var(--f-mono)}
+
+/* header */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--surface);border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex;align-items:center;gap:20px;min-height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);flex:none}
+.brand svg{width:38px;height:38px}
+.wm{display:flex;flex-direction:column;line-height:.9;font-family:var(--f-display)}
+.wm b{font-size:1.32rem;font-weight:700;letter-spacing:-.02em;color:var(--logo-green)}
+.wm span{font-size:.78rem;font-weight:500;letter-spacing:.06em;color:var(--logo-sage)}
+.nav{display:flex;align-items:center;gap:2px;margin-left:auto}
+.nav a{font-size:.9rem;font-weight:500;color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:var(--r);white-space:nowrap}
+.nav a:hover{color:var(--ink);background:var(--sunk)}
+.nav a[aria-current="page"]{color:var(--accent-text);background:var(--sunk)}
+.nav .flag{color:var(--olive)}
+.nav a.btn,.nav a.btn:hover{color:var(--on-accent);background:var(--accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 .95rem var(--f-body);padding:12px 20px;border-radius:var(--r);border:1.5px solid var(--accent);background:var(--accent);color:var(--on-accent);text-decoration:none;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+.btn:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
+.btn.ghost{background:transparent;color:var(--accent-text);border-color:var(--accent-text)}
+.btn.ghost:hover{background:var(--sunk)}
+.btn.sm{padding:9px 14px;font-size:.88rem}
+.band .btn{background:var(--accent);border-color:var(--band-btn-ring,var(--accent));color:var(--on-accent)}
+.band .btn:hover{background:var(--accent-hover)}
+.band .btn.ghost{background:transparent;color:var(--band-ghost,var(--accent-text));border-color:var(--band-ghost,var(--accent-text))}
+.band .btn.ghost:hover{background:rgba(255,255,255,.12)}
+.menu-btn{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:8px 12px;font:600 .9rem var(--f-body);cursor:pointer}
+@media (max-width:1120px){
+  .menu-btn{display:inline-flex}
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;background:var(--surface);border-bottom:1px solid var(--line);padding:8px max(16px,env(safe-area-inset-right,0px)) 16px max(16px,env(safe-area-inset-left,0px));gap:2px}
+  .nav.open{display:flex}
+  .nav a{padding:12px}
+  .nav .btn{margin-top:8px}
+}
+
+/* sections */
+section{padding-block:clamp(56px,8vw,96px)}
+.sec-head{display:grid;gap:14px;margin-bottom:40px;max-width:760px}
+.sec-head h2{font-size:clamp(1.9rem,3.6vw,2.75rem)}
+.band{background:var(--band);color:var(--on-band)}
+.band h1,.band h2,.band h3,.band h4{color:inherit}
+.band .eyebrow{color:var(--band-eyebrow)}
+.band .lede,.band .muted{color:var(--on-band-muted)}
+.sunk{background:var(--sunk)}
+.muted{color:var(--muted)}
+
+/* hero */
+.hero{padding-block:clamp(48px,7vw,88px) clamp(56px,7vw,96px);position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:clamp(32px,5vw,72px);align-items:center}
+.hero h1{font-size:clamp(2.6rem,6.2vw,5rem);font-weight:600;letter-spacing:-.03em;margin:18px 0 22px}
+.hero h1 em{font-style:normal;color:var(--pop)}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:34px;font-family:var(--f-mono);font-size:.78rem;color:var(--muted)}
+.hero-meta span::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--pop);margin-right:8px;vertical-align:1px}
+@media (max-width:880px){.hero-grid{grid-template-columns:1fr}}
+
+/* batch tag (signature element) */
+.tag{background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:0 1px 0 var(--line),0 24px 48px -28px rgba(18,64,44,.35);font-family:var(--f-mono);font-size:.8rem;position:relative;min-width:0}
+.tag-top{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px dashed var(--line);gap:10px}
+.tag-top .hole{width:14px;height:14px;border-radius:50%;border:1.5px solid var(--line);background:var(--paper);flex:none}
+.tag-name{padding:18px 18px 6px;font-family:var(--f-display);font-size:1.55rem;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.tag-src{padding:0 18px 16px;font-family:var(--f-body);font-style:italic;color:var(--muted);font-size:.95rem}
+.tag dl{margin:0;display:grid;grid-template-columns:auto 1fr;border-top:1px solid var(--line)}
+.tag dt,.tag dd{margin:0;padding:9px 18px;border-bottom:1px solid var(--line)}
+.tag dt{color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-size:.68rem;align-self:center}
+.tag dd{text-align:right;color:var(--ink)}
+.tag dl > :nth-last-child(-n+2){border-bottom:0}
+.tag-foot{display:flex;justify-content:space-between;gap:10px;padding:12px 18px;background:var(--sunk);border-radius:0 0 10px 10px;color:var(--muted);font-size:.72rem;flex-wrap:wrap}
+.barcode{display:flex;gap:2px;height:22px;align-items:stretch}
+.barcode i{display:block;background:var(--ink);opacity:.75}
+.swatch{width:46px;height:46px;border-radius:50%;flex:none;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.55),transparent 45%),var(--sw);box-shadow:inset 0 -6px 12px rgba(0,0,0,.18)}
+.chip{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:999px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.chip.flag{border-color:var(--olive);color:var(--olive);background:var(--olive-soft)}
+
+/* value list */
+.values{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.values > div{background:var(--surface);padding:26px 22px;display:grid;gap:10px;align-content:start}
+.values h3{font-size:1.12rem}
+.values p{color:var(--muted);font-size:.95rem}
+
+/* flagship */
+.flag-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,64px);align-items:center}
+.flag-grid h2{font-size:clamp(2rem,4vw,3.1rem);margin:14px 0 18px}
+.flag-specs{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.14);border-radius:var(--r);overflow:hidden;margin-top:28px}
+.flag-specs div{background:var(--band-2);padding:16px 18px;display:grid;gap:4px;min-width:0}
+.flag-specs small{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--on-band-muted)}
+.flag-art{aspect-ratio:1/1;max-width:100%;border-radius:12px;background:var(--band-2);position:relative;overflow:hidden}
+.flag-art canvas{width:100%;height:100%;display:block}
+.flag-art .cap{position:absolute;left:18px;bottom:16px;right:18px;font-family:var(--f-mono);font-size:.72rem;color:var(--on-band-muted);display:flex;justify-content:space-between;gap:8px}
+@media (max-width:880px){.flag-grid{grid-template-columns:1fr}}
+
+/* product cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:960px){.cards{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.cards{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px;display:grid;gap:14px;grid-template-rows:auto auto 1fr auto;text-decoration:none;color:var(--ink);transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.card-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.card .code{font-family:var(--f-mono);font-size:.74rem;color:var(--muted)}
+.card h3{font-size:1.32rem}
+.card .bot{font-style:italic;color:var(--muted);font-size:.92rem;margin-top:4px}
+.card dl{margin:0;display:grid;gap:6px;font-size:.9rem}
+.card dl div{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:6px}
+.card dt{color:var(--muted);font-family:var(--f-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;align-self:center}
+.card dd{margin:0;text-align:right}
+.card .go{font-weight:600;color:var(--accent-text);font-size:.92rem}
+
+/* process */
+.process{display:grid;grid-template-columns:repeat(5,1fr);gap:0;counter-reset:st;position:relative}
+.process li{list-style:none;padding:0 18px 0 0;position:relative;display:grid;gap:10px;align-content:start}
+.process li::before{counter-increment:st;content:counter(st,decimal-leading-zero);font-family:var(--f-mono);font-size:.78rem;color:var(--olive);display:flex;align-items:center;gap:10px}
+.process .rail{height:2px;background:var(--line);position:relative;margin:2px 0 8px}
+.process .rail::before{content:"";position:absolute;left:0;top:-5px;width:12px;height:12px;border-radius:50%;background:var(--pop);border:3px solid var(--paper)}
+.process h3{font-size:1.1rem}
+.process p{color:var(--muted);font-size:.93rem}
+.process{padding:0;margin:0}
+@media (max-width:900px){.process{grid-template-columns:1fr;gap:26px}.process .rail{display:none}.process li{padding:0 0 0 22px;border-left:2px solid var(--line)}}
+
+/* functions list */
+.funcs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;padding:0;margin:0;counter-reset:fn}
+.funcs li{list-style:none;background:var(--surface);padding:24px 22px;display:grid;gap:8px;align-content:start}
+.funcs li::before{counter-increment:fn;content:counter(fn,decimal-leading-zero);font-family:var(--f-mono);font-size:.74rem;color:var(--olive)}
+.funcs h3{font-size:1.05rem}
+.funcs p{color:var(--muted);font-size:.92rem}
+@media (max-width:900px){.funcs{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.funcs{grid-template-columns:1fr}}
+
+/* two col */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:start}
+.two > *{min-width:0}
+@media (max-width:860px){.two{grid-template-columns:1fr}}
+.list{margin:0;padding:0;display:grid;gap:0}
+.list li{list-style:none;padding:12px 0;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:baseline}
+.list li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--pop);transform:translateY(-1px)}
+.band .list li{border-color:rgba(255,255,255,.14)}
+
+/* doc rows */
+.docs{display:grid;gap:0;border-top:1px solid var(--line)}
+.doc{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:16px 4px;border-bottom:1px solid var(--line)}
+.doc .ico{width:34px;height:42px;border:1.5px solid var(--line);border-radius:3px;position:relative;background:var(--surface);font-family:var(--f-mono);font-size:.55rem;display:flex;align-items:flex-end;justify-content:center;padding-bottom:5px;color:var(--muted)}
+.doc .ico::after{content:"";position:absolute;right:-1.5px;top:-1.5px;width:10px;height:10px;background:var(--paper);border-left:1.5px solid var(--line);border-bottom:1.5px solid var(--line)}
+.doc h4{font-family:var(--f-body);font-size:1rem;font-weight:600;letter-spacing:0}
+.doc p{color:var(--muted);font-size:.88rem}
+.doc .how{font-family:var(--f-mono);font-size:.72rem;color:var(--muted);text-align:right}
+@media (max-width:560px){.doc{grid-template-columns:auto 1fr}.doc .how{grid-column:2;text-align:left}}
+
+/* page header */
+.ph{padding-block:clamp(44px,6vw,72px) clamp(36px,5vw,56px);border-bottom:1px solid var(--line)}
+.ph h1{font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-.025em;margin:14px 0 16px}
+.crumbs{font-family:var(--f-mono);font-size:.74rem;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap}
+.crumbs a{color:var(--muted);text-decoration:none}
+.crumbs a:hover{color:var(--accent-text)}
+
+/* product page */
+.pp-head{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:end}
+.pp-head .actions{display:flex;flex-wrap:wrap;gap:10px}
+@media (max-width:820px){.pp-head{grid-template-columns:1fr}}
+.pp-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(28px,4vw,56px);align-items:start}
+.pp-grid > *{min-width:0}
+@media (max-width:900px){.pp-grid{grid-template-columns:1fr}}
+.sheet{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.sheet-h{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 20px;background:var(--sunk);border-bottom:1px solid var(--line);font-family:var(--f-mono);font-size:.74rem;color:var(--muted);flex-wrap:wrap}
+.sheet table{width:100%;border-collapse:collapse;font-size:.95rem}
+.sheet th,.sheet td{text-align:left;padding:13px 20px;border-bottom:1px solid var(--line);vertical-align:top}
+.sheet tr:last-child th,.sheet tr:last-child td{border-bottom:0}
+.sheet th{font-family:var(--f-mono);font-weight:400;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);width:38%}
+.req{color:var(--muted);font-family:var(--f-mono);font-size:.82rem}
+.sheet-f{padding:12px 20px;font-size:.82rem;color:var(--muted);border-top:1px solid var(--line);background:var(--sunk)}
+.side{display:grid;gap:28px}
+.side h3{font-size:1.15rem;margin-bottom:10px}
+.apps{display:flex;flex-wrap:wrap;gap:8px}
+.apps span{font-size:.88rem;padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+.others{display:flex;gap:10px;flex-wrap:wrap}
+.others a{display:flex;align-items:center;gap:10px;padding:10px 14px 10px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--ink);font-size:.9rem;background:var(--surface)}
+.others a:hover{border-color:var(--accent)}
+.others .swatch{width:22px;height:22px;box-shadow:none}
+
+/* form */
+.form-shell{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,64px);align-items:start}
+.form-shell > *{min-width:0}
+@media (max-width:900px){.form-shell{grid-template-columns:1fr}}
+form.enq{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:clamp(20px,3vw,32px);display:grid;grid-template-columns:1fr 1fr;gap:18px 16px}
+.band form.enq{color:var(--ink)}
+.fld{display:grid;gap:6px;min-width:0}
+.fld.full{grid-column:1/-1}
+@media (max-width:600px){form.enq{grid-template-columns:1fr}}
+.fld label,.fld legend{font-size:.82rem;font-weight:600;color:var(--ink)}
+.fld label .opt{font-weight:400;color:var(--muted)}
+.fld input[type=text],.fld input[type=email],.fld input[type=tel],.fld select,.fld textarea{width:100%;font:inherit;font-size:.96rem;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:11px 12px;min-width:0}
+.fld textarea{min-height:110px;resize:vertical}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:2px solid var(--accent);outline-offset:-1px;border-color:var(--accent)}
+.fld .row{display:grid;grid-template-columns:1fr 120px;gap:8px}
+fieldset.fld{border:0;padding:0;margin:0}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg label{display:flex;align-items:center;gap:8px;font-weight:500;font-size:.9rem;border:1px solid var(--line);border-radius:var(--r);padding:9px 14px;cursor:pointer;background:var(--paper)}
+.seg input{accent-color:var(--accent)}
+.seg label:has(input:checked){border-color:var(--accent);background:var(--sunk)}
+.file{border:1.5px dashed var(--line);border-radius:var(--r);padding:14px;font-size:.88rem;color:var(--muted);background:var(--paper)}
+.file input{font:inherit;font-size:.86rem;max-width:100%}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:.88rem;color:var(--muted)}
+.consent input{margin-top:4px;accent-color:var(--accent);flex:none}
+.err{color:var(--err);font-size:.8rem;min-height:0}
+.fld.bad input,.fld.bad select,.fld.bad textarea{border-color:#c0473a}
+.submit-row{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+.submit-row small{color:var(--muted);font-size:.8rem;max-width:44ch}
+.done{grid-column:1/-1;border:1px solid var(--ok);border-radius:var(--r);padding:20px;display:grid;gap:10px;background:var(--paper)}
+.done h4{color:var(--ok);font-size:1.2rem}
+.done dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-size:.88rem}
+.done dt{color:var(--muted);font-family:var(--f-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;align-self:center}
+.done dd{margin:0}
+.form-aside{display:grid;gap:22px}
+.form-aside h2{font-size:clamp(1.8rem,3.4vw,2.6rem)}
+.steps{margin:0;padding:0;display:grid;gap:14px;counter-reset:s}
+.steps li{list-style:none;display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start}
+.steps li::before{counter-increment:s;content:counter(s);width:28px;height:28px;border-radius:50%;border:1.5px solid currentColor;display:grid;place-items:center;font-family:var(--f-mono);font-size:.8rem;opacity:.8}
+
+/* emails */
+.mails{display:grid;gap:0;border-top:1px solid var(--line)}
+.mail{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.4fr) auto;gap:16px;align-items:center;padding:16px 2px;border-bottom:1px solid var(--line)}
+.mail .addr{font-family:var(--f-mono);font-size:.95rem;color:var(--accent-text);user-select:all;overflow-wrap:anywhere}
+.mail .fn{font-weight:600;font-size:.9rem}
+.mail p{color:var(--muted);font-size:.88rem}
+.copy{font:500 .78rem var(--f-mono);background:var(--surface);border:1px solid var(--line);color:var(--ink);border-radius:var(--r);padding:7px 10px;cursor:pointer}
+.copy:hover{border-color:var(--accent)}
+.copy.ok{color:var(--ok);border-color:var(--ok)}
+@media (max-width:700px){.mail{grid-template-columns:1fr auto}.mail > div:nth-child(2){grid-column:1/-1;grid-row:2}}
+
+/* review notes */
+.rnote{display:none;border:1.5px dashed var(--note);background:var(--note-bg);color:var(--ink);border-radius:var(--r);padding:12px 14px;font-size:.86rem;line-height:1.5}
+.rnote b{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--note);display:block;margin-bottom:4px}
+.rnote ul{margin:6px 0 0;padding-left:18px}
+body.review .rnote{display:block}
+body.review .rv{outline:1.5px dashed var(--note);outline-offset:3px;border-radius:2px}
+.review-toggle{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 14px 8px 10px;font:500 .8rem var(--f-body);color:var(--ink);cursor:pointer;box-shadow:0 10px 30px -12px rgba(0,0,0,.3)}
+.review-toggle .sw{width:30px;height:18px;border-radius:999px;background:var(--line);position:relative;transition:background .15s}
+.review-toggle .sw::after{content:"";position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:var(--surface);transition:transform .15s}
+body.review .review-toggle .sw{background:var(--note)}
+body.review .review-toggle .sw::after{transform:translateX(12px)}
+
+.route-pick{position:fixed;left:calc(16px + env(safe-area-inset-left,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px;box-shadow:0 10px 30px -12px rgba(0,0,0,.3);font:500 .78rem var(--f-body)}
+.route-pick span{padding:0 8px 0 8px;color:var(--muted)}
+.route-pick button{display:flex;align-items:center;gap:6px;border:0;background:none;color:var(--ink);font:inherit;padding:6px 10px;border-radius:999px;cursor:pointer}
+.route-pick button i{width:12px;height:12px;border-radius:50%;display:block;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12)}
+.route-pick button[aria-pressed="true"]{background:var(--sunk);box-shadow:inset 0 0 0 1px var(--line)}
+@media (max-width:700px){.route-pick span,.route-pick b{display:none}.route-pick button{padding:7px}}
+
+/* footer */
+footer{background:var(--band-2);color:var(--on-band-muted);padding-block:56px 32px;font-size:.92rem}
+footer .grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:32px}
+footer h4{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--on-band);font-weight:500;margin-bottom:12px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer a{color:var(--on-band-muted);text-decoration:none}
+footer a:hover{color:var(--on-band)}
+footer .legal{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding-top:20px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.8rem}
+@media (max-width:820px){footer .grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){footer .grid{grid-template-columns:1fr}}
+
+.view{animation:fade .35s ease both}
+@keyframes fade{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}
+.stack{display:grid;gap:18px}
+.callout{border-left:3px solid var(--olive);padding:4px 0 4px 18px;color:var(--muted);max-width:66ch}
+.kv{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.kv > div{border-top:2px solid var(--accent);padding-top:14px;display:grid;gap:6px}
+.kv h3{font-size:1.1rem}
+.kv p{color:var(--muted);font-size:.94rem}
+@media (max-width:760px){.kv{grid-template-columns:1fr}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 100 100">
+    <circle cx="31.44" cy="25.91" r="17.40" style="fill:var(--logo-copper)"/>
+    <path style="fill:var(--logo-vein)" d="M85.01 3.44 L82.43 3.44 L81.77 3.67 L80.59 3.67 L80.07 3.87 L78.15 4.16 L74.71 5.07 L70.50 6.71 L67.06 8.54 L63.07 11.35 L60.81 13.36 L58.14 16.51 L56.02 19.81 L54.42 23.02 L53.01 26.78 L51.83 31.74 L51.83 32.45 L51.38 34.49 L51.38 35.67 L51.15 36.32 L51.15 38.88 L50.92 39.54 L50.92 44.61 L51.15 45.27 L51.15 47.82 L51.38 48.48 L51.38 50.11 L51.61 50.77 L51.61 51.95 L51.92 52.61 L52.41 52.72 L53.07 52.49 L53.93 52.47 L60.58 50.86 L65.25 49.23 L69.18 47.36 L70.76 46.47 L74.28 44.12 L76.61 42.06 L77.04 41.83 L78.99 39.88 L81.51 36.67 L83.63 33.37 L85.69 28.78 L86.64 25.49 L86.67 24.86 L87.13 23.05 L87.13 22.33 L87.36 21.67 L87.36 20.27 L87.59 19.61 L87.59 14.54 L87.36 13.88 L87.36 12.24 L87.13 11.58 L86.87 9.58 L85.95 5.91 L85.26 3.84Z"/>
+    <path style="fill:var(--logo-green)" fill-rule="evenodd" d="M1.66 46.96 L1.72 51.83 L2.35 57.43 L3.56 62.76 L4.93 66.89 L6.28 70.07 L8.31 73.91 L10.84 77.69 L13.76 81.25 L17.40 84.83 L20.70 87.50 L22.39 88.70 L25.23 90.45 L29.01 92.40 L33.26 94.15 L38.42 95.73 L43.41 96.67 L47.53 97.05 L51.98 97.10 L57.25 96.67 L62.10 95.79 L66.06 94.67 L69.95 93.23 L74.20 91.20 L76.95 89.59 L78.96 88.25 L82.57 85.44 L86.01 82.20 L89.08 78.67 L91.60 75.14 L93.92 70.93 L95.73 66.74 L97.13 62.44 L98.28 56.97 L98.77 52.58 L98.85 47.02 L98.65 46.70 L97.02 46.56 L91.83 46.67 L88.33 47.05 L85.69 47.51 L82.91 48.17 L79.96 49.05 L76.83 50.26 L74.20 51.49 L71.47 52.98 L68.84 54.70 L65.83 57.00 L62.27 60.29 L59.92 62.93 L56.51 67.72 L54.21 71.85 L52.61 75.69 L51.23 80.28 L50.75 82.77 L50.46 85.09 L50.23 85.46 L50.00 85.01 L49.91 83.92 L49.20 80.05 L48.51 77.61 L47.33 74.31 L45.50 70.38 L43.75 67.35 L40.71 63.13 L38.39 60.49 L36.10 58.26 L34.23 56.65 L30.62 54.01 L27.12 51.92 L23.22 50.09 L19.07 48.60 L14.65 47.48 L9.95 46.79 L6.59 46.59 L2.09 46.62 L1.81 46.73Z M85.32 2.84 L83.92 2.84 L80.33 3.24 L76.18 4.16 L73.28 5.07 L69.07 6.94 L65.83 8.83 L64.22 9.98 L61.78 11.98 L59.66 14.11 L58.20 15.80 L57.02 17.40 L55.02 20.76 L53.30 24.51 L52.15 27.98 L51.00 33.60 L50.52 38.19 L50.43 43.26 L50.75 48.77 L51.23 53.04 L51.38 53.27 L55.25 52.67 L60.67 51.32 L65.37 49.66 L69.61 47.62 L73.28 45.33 L76.89 42.40 L79.47 39.82 L82.20 36.44 L84.52 32.63 L86.07 29.10 L87.21 25.09 L87.93 20.93 L88.07 19.04 L88.10 15.48 L87.82 12.18 L87.41 9.81 L86.81 7.28 L86.10 4.79Z M82.86 26.00 L82.71 26.23 L73.45 30.93 L67.43 33.69 L66.51 34.03 L66.23 33.86 L66.26 33.63 L66.63 33.31 L70.90 31.39 L81.28 26.32 L82.51 25.80 L82.77 25.86Z M81.05 9.03 L81.22 9.40 L80.48 10.64 L55.19 47.96 L54.90 48.19 L54.70 48.11 L54.59 47.82 L54.90 47.22 L62.73 35.38 L62.67 24.34 L62.90 19.78 L63.30 16.40 L63.59 16.28 L63.73 16.49 L63.33 25.86 L63.36 32.17 L63.45 33.89 L63.62 34.03 L64.42 33.03 L77.52 13.50 L80.13 9.86 L80.82 9.06Z"/>
+  </symbol>
+</svg>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="Phyto Elements home">
+      <svg aria-hidden="true"><use href="#mark"/></svg>
+      <span class="wm"><b>phyto</b><span>elements</span></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#garcinia" class="flag">Flagship: Garcinia</a>
+      <a href="#operations">Operations</a>
+      <a href="#manufacturing">Manufacturing &amp; Quality</a>
+      <a href="#resources">Resources</a>
+      <a href="#contact">Contact</a>
+      <a href="#sample" class="btn sm">Request a Sample</a>
+    </nav>
+  </div>
+</header>
+
+<main id="app"></main>
+
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div class="stack">
+        <a class="brand" href="#home"><svg aria-hidden="true"><use href="#mark"/></svg><span class="wm"><b>phyto</b><span>elements</span></span></a>
+        <p style="max-width:34ch">Botanical Ingredients for Global Markets. Bulk plant extracts manufactured in India for Indian and export B2B buyers.</p>
+      </div>
+      <div><h4>Products</h4><ul id="footProducts"></ul></div>
+      <div><h4>Company</h4><ul>
+        <li><a href="#about">About Phyto Elements</a></li>
+        <li><a href="#operations">Operations</a></li>
+        <li><a href="#manufacturing">Manufacturing &amp; Quality</a></li>
+        <li><a href="#resources">Documents / Resources</a></li>
+        <li><a href="#privacy">Privacy notice</a></li>
+      </ul></div>
+      <div><h4>Write to us</h4><ul class="mono" style="font-size:.84rem">
+        <li>info@phytoelements.in</li><li>sales@phytoelements.in</li><li>samples@phytoelements.in</li><li>quality@phytoelements.in</li><li>orders@phytoelements.in</li>
+      </ul></div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Phyto Elements · phytoelements.in</span>
+      <span class="rv">Registered legal name and address to be published after verification</span>
+    </div>
+  </div>
+</footer>
+
+<div class="route-pick" role="group" aria-label="Colour route">
+  <span>Colour route</span>
+  <button type="button" data-route="greenlight" title="Green (light)"><i style="background:linear-gradient(90deg,#2b8530 50%,#eef6e3 50%)"></i><b>1. Green light</b></button>
+  <button type="button" data-route="greens" title="Green (dark)"><i style="background:linear-gradient(90deg,#9bd866 50%,#0d3b2e 50%)"></i><b>2. Green dark</b></button>
+  <button type="button" data-route="bluelight" title="Blue (light)"><i style="background:linear-gradient(90deg,#15dbeb 50%,#e8fafc 50%)"></i><b>3. Blue light</b></button>
+  <button type="button" data-route="bluevivid" title="Blue vivid"><i style="background:linear-gradient(90deg,#1d6bf3 50%,#1d6bf3 50%)"></i><b>4. Blue vivid</b></button>
+  <button type="button" data-route="bluegreen" title="Blue + green"><i style="background:linear-gradient(90deg,#15dbeb 50%,#dcf8e9 50%)"></i><b>5. Blue + green</b></button>
+  <button type="button" data-route="bluedark" title="Blue (dark)"><i style="background:linear-gradient(90deg,#2fbfca 50%,#0d3f44 50%)"></i><b>6. Blue dark</b></button>
+  <button type="button" data-route="limeblue" title="Lime + green + blue"><i style="background:linear-gradient(90deg,#8FD14F 50%,#2F8F2E 50%)"></i><b>7. Lime + green + blue</b></button>
+  <button type="button" data-route="gradient" title="Gradient"><i style="background:linear-gradient(110deg,#0B7CF2 0%,#20B8D8 50%,#8FD14F 100%)"></i><b>8. Gradient</b></button>
+</div>
+<button class="review-toggle" id="reviewBtn" aria-pressed="false"><span class="sw"></span>Review notes</button>
+
+<script>
+const PRODUCTS = [
+  {id:"garcinia",code:"PE-01",name:"Garcinia Cambogia Extract",short:"Garcinia Cambogia",role:"Flagship product",flag:true,
+   source:"Garcinia gummi-gutta (syn. Garcinia cambogia)",part:"Fruit rind",marker:"Hydroxycitric Acid (HCA)",
+   area:"Nutraceutical and wellness formulations",sw:"#b58b4f",
+   apps:["Dietary-supplement formulations","Wellness formulations","Powder and capsule blends","Private-label products"],
+   intro:"Our flagship extract, built on the team's existing product knowledge and market experience. Produced to an approved specification for supplement manufacturers, distributors and private-label formulators.",
+   note:"Confirm botanical nomenclature (G. gummi-gutta vs G. cambogia) and the HCA grades Phyto Elements will commit to."},
+  {id:"curcumin",code:"PE-02",name:"Curcumin Extract",short:"Curcumin",role:"Core product",
+   source:"Curcuma longa",part:"Rhizome",marker:"Curcuminoids",area:"Nutraceuticals, functional foods and colour applications",sw:"#e0a11b",
+   apps:["Nutraceutical formulations","Functional foods","Food colour applications","Traditional-product manufacturing"],
+   intro:"Standardized turmeric extract for nutraceutical, functional-food and colour applications, supplied against a defined curcuminoid specification.",
+   note:"Confirm curcuminoid grade range and whether colour-application grades will be offered at launch."},
+  {id:"ashwagandha",code:"PE-03",name:"Ashwagandha Extract",short:"Ashwagandha",role:"Core product",
+   source:"Withania somnifera",part:"Root",marker:"Withanolides",area:"Nutraceutical and wellness formulations",sw:"#b39a73",
+   apps:["Nutraceutical formulations","Wellness formulations","Ayurvedic products","Private-label products"],
+   intro:"Root extract standardized to withanolides for nutraceutical, wellness and Ayurvedic-product manufacturers.",
+   note:"Confirm plant part (root only vs root + leaf) and withanolide test method."},
+  {id:"boswellia",code:"PE-04",name:"Boswellia Extract",short:"Boswellia",role:"Core product",
+   source:"Boswellia serrata",part:"Oleo-gum resin",marker:"Boswellic acids / AKBA, depending on grade",area:"Nutraceutical formulations",sw:"#d8c79c",
+   apps:["Nutraceutical formulations","Joint-support category blends","Ayurvedic products","Private-label products"],
+   intro:"Resin extract offered by boswellic-acid or AKBA grade, matched to the formulator's specification.",
+   note:"Confirm which grades (total boswellic acids vs AKBA-enriched) are manufactured. Review 'joint-support category' wording for claims compliance."},
+  {id:"bakuchiol",code:"PE-05",name:"Bakuchiol Extract",short:"Bakuchiol",role:"Specialty product",
+   source:"Psoralea corylifolia (Babchi)",part:"Seed",marker:"Bakuchiol assay, depending on grade",area:"Cosmetic and personal-care formulations",sw:"#c9a54e",
+   apps:["Skin-care formulations","Cosmetic actives","Personal-care products","Contract cosmetic manufacturing"],
+   intro:"A specialty ingredient for cosmetic and personal-care formulators, supplied by bakuchiol assay grade.",
+   note:"Brief flags Bakuchiol specifically: source terminology may differ by raw-material vendor (Psoralea corylifolia / Cullen corylifolium). QA to confirm before publishing."},
+  {id:"bacopa",code:"PE-06",name:"Bacopa Extract",short:"Bacopa",role:"Core product",
+   source:"Bacopa monnieri",part:"Whole herb / aerial parts",marker:"Bacosides",area:"Nutraceutical and wellness formulations",sw:"#8d7f55",
+   apps:["Nutraceutical formulations","Wellness formulations","Ayurvedic products","Private-label products"],
+   intro:"Herb extract standardized to bacosides for nutraceutical, wellness and Ayurvedic-product manufacturers.",
+   note:"Confirm plant part and bacoside test method (HPLC vs UV) used for the grade claim."}
+];
+const byId = Object.fromEntries(PRODUCTS.map(p=>[p.id,p]));
+
+const STAGES = [
+  ["Raw-material sourcing","Botanical raw materials are selected against product identity, quality and process requirements."],
+  ["Extraction","Approved botanical material is processed using the extraction system and controlled parameters appropriate to the product and required grade."],
+  ["Standardization","The manufactured extract is adjusted or blended to meet the specified active-marker range and other approved product parameters."],
+  ["Quality testing","The batch is assessed against the approved specification, with results reported in the batch Certificate of Analysis."],
+  ["Packaging and dispatch","Product is packed to the agreed configuration and dispatched with the approved commercial and quality documentation."]
+];
+const FUNCS = [
+  ["Product and process development","Define the botanical source, plant part, extraction route, target marker compounds, process parameters and finished-product specification for each focus extract."],
+  ["Raw-material procurement and qualification","Source identified botanical raw materials and approve vendors against identity, quality, contaminant, traceability and commercial requirements."],
+  ["Incoming quality control","Inspect and test incoming botanical materials against approved acceptance criteria before release to production."],
+  ["Extraction and processing","Carry out extraction under controlled solvent, temperature, time and equipment conditions appropriate to the product and target grade."],
+  ["Concentration, drying and milling","Concentrate the extract, apply the appropriate drying process, mill or sieve where required, and produce a stable, free-flowing bulk ingredient."],
+  ["Standardization and blending","Adjust or blend the extract to the approved active-marker range and other product parameters to achieve batch consistency."],
+  ["Quality control and batch release","Test identity, assay, physical parameters, contaminants and microbiological limits as applicable; release only batches meeting the approved specification."],
+  ["Packing and documentation","Pack released product in the approved bulk format and issue batch-linked quality and commercial documentation, including the Certificate of Analysis."],
+  ["Domestic and export fulfilment","Coordinate quotations, purchase orders, dispatch, export documentation, logistics and post-delivery customer support for Indian and global buyers."]
+];
+const VALUES = [
+  ["Focused manufacturing","Production capability centred on six extracts, led by Garcinia Cambogia Extract."],
+  ["Specification-driven batches","Every batch is planned against an approved product specification and your requirements."],
+  ["One point of contact","Discuss specification, quantity, sample, price, packing, lead time and documents with one team."],
+  ["Batch documentation","Specifications, Certificates of Analysis, quotations, POs and shipment documents exchanged by email."],
+  ["Indian and global reach","Supplying buyers in India and export markets, subject to product and destination requirements."]
+];
+const CUSTOMERS = ["Nutraceutical and dietary-supplement manufacturers","Ingredient distributors and importers","Contract manufacturers and private-label formulators","Functional food and beverage companies","Cosmetic and personal-care manufacturers","Ayurvedic and traditional-product manufacturers"];
+const MAILS = [
+  ["info@phytoelements.in","General","Company enquiries and non-product questions."],
+  ["sales@phytoelements.in","Sales","New buyers, quotations, pricing, MOQ, lead time and follow-up."],
+  ["samples@phytoelements.in","Samples","Sample requests, dispatch details and sample follow-up."],
+  ["quality@phytoelements.in","Quality & documents","Specifications, representative or batch COAs, SDS and technical questions."],
+  ["orders@phytoelements.in","Orders & commercial","Purchase orders, proforma invoices, acknowledgements, dispatch and shipment."]
+];
+const DOCS = [
+  ["Company profile","PDF","Overview of Phyto Elements, portfolio and operating model.","Email on request · info@"],
+  ["Product specification sheet","SPEC","Grade, marker compound, physical parameters and limits per product.","Email on request · quality@"],
+  ["Representative COA","COA","Clearly labelled as representative. Indicates the test panel and typical results.","Email on request · quality@"],
+  ["Batch-specific COA","COA","Issued after batch identification and matched to the batch reference.","With quotation or order · quality@"],
+  ["Safety Data Sheet","SDS","Provided where applicable to the product and transaction.","Email on request · quality@"],
+  ["Packing and storage information","INFO","Packing configuration, storage conditions and shelf-life guidance.","Email on request · sales@"],
+  ["Quotation and proforma invoice","QUO","Commercial terms for the confirmed specification and quantity.","On enquiry · sales@"],
+  ["PO acknowledgement and shipment documents","SHIP","Order confirmation, dispatch and export documentation.","On order · orders@"]
+];
+
+const esc = s => String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const mark = () => `<svg aria-hidden="true"><use href="#mark"/></svg>`;
+const barcode = seed => { let h="",x=seed; for(let i=0;i<34;i++){x=(x*9301+49297)%233280; const w=1+(x%3); h+=`<i style="width:${w}px;${i%5===0?'opacity:.25':''}"></i>`;} return `<span class="barcode" aria-hidden="true">${h}</span>`; };
+const note = (html) => `<div class="rnote"><b>Review before launch</b>${html}</div>`;
+
+function batchTag(p){
+  return `<div class="tag">
+    <div class="tag-top"><span class="hole"></span><span>${p.code} · BULK EXTRACT</span><span class="chip ${p.flag?'flag':''}">${esc(p.role)}</span></div>
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding-right:18px">
+      <div style="min-width:0"><div class="tag-name">${esc(p.name)}</div><div class="tag-src rv">${esc(p.source)}</div></div>
+      <div class="swatch" style="--sw:${p.sw};margin-top:18px"></div>
+    </div>
+    <dl>
+      <dt>Plant part</dt><dd class="rv">${esc(p.part)}</dd>
+      <dt>Marker</dt><dd>${esc(p.marker.split(",")[0])}</dd>
+      <dt>Grade / assay</dt><dd class="req">Per approved specification</dd>
+      <dt>Documents</dt><dd>Spec · COA · SDS</dd>
+    </dl>
+    <div class="tag-foot"><span>Batch No. ________</span>${barcode(p.code.charCodeAt(4)*7)}</div>
+  </div>`;
+}
+
+function card(p){
+  return `<a class="card" href="#${p.id}">
+    <div class="card-top"><span class="code">${p.code}</span>${p.flag?'<span class="chip flag">Flagship</span>':`<span class="chip">${esc(p.role.replace(" product",""))}</span>`}</div>
+    <div style="display:flex;gap:14px;align-items:center"><div class="swatch" style="--sw:${p.sw}"></div><div style="min-width:0"><h3>${esc(p.name)}</h3><div class="bot rv">${esc(p.source.split(" (")[0])}</div></div></div>
+    <dl><div><dt>Marker</dt><dd>${esc(p.marker.split(",")[0])}</dd></div><div><dt>Use</dt><dd>${esc(p.area.split(",")[0].replace(" formulations",""))}</dd></div></dl>
+    <span class="go">View product &amp; enquire →</span>
+  </a>`;
+}
+
+function processBlock(){
+  return `<ol class="process">${STAGES.map(s=>`<li><div class="rail"></div><h3>${s[0]}</h3><p>${s[1]}</p></li>`).join("")}</ol>`;
+}
+
+let formCount = 0;
+function enquiryForm(pre="", type="Quote"){
+  const n = ++formCount, id = k => `f${n}-${k}`;
+  const opts = PRODUCTS.map(p=>`<option value="${p.id}" ${p.id===pre?"selected":""}>${esc(p.name)}</option>`).join("");
+  const types = ["Specifications","Sample","Quote"];
+  return `<form class="enq" novalidate data-n="${n}">
+    <fieldset class="fld full"><legend>I'd like to</legend><div class="seg">
+      ${types.map(t=>`<label><input type="radio" name="${id('type')}" id="${id('type-'+t)}" value="${t}" ${t===type?"checked":""}> ${t==="Specifications"?"Request specifications":t==="Sample"?"Request a sample":"Request a quote"}</label>`).join("")}
+    </div></fieldset>
+    <div class="fld"><label for="${id('name')}">Full name</label><input type="text" id="${id('name')}" name="name" autocomplete="name" required><span class="err"></span></div>
+    <div class="fld"><label for="${id('co')}">Company name</label><input type="text" id="${id('co')}" name="company" autocomplete="organization" required><span class="err"></span></div>
+    <div class="fld"><label for="${id('email')}">Business email</label><input type="email" id="${id('email')}" name="email" autocomplete="email" required><span class="err"></span></div>
+    <div class="fld"><label for="${id('phone')}">Phone / WhatsApp <span class="opt">with country code</span></label><input type="tel" id="${id('phone')}" name="phone" placeholder="+91 …" autocomplete="tel" required><span class="err"></span></div>
+    <div class="fld"><label for="${id('country')}">Country</label><input type="text" id="${id('country')}" name="country" autocomplete="country-name" required><span class="err"></span></div>
+    <div class="fld"><label for="${id('product')}">Product of interest</label><select id="${id('product')}" name="product" required><option value="">Select a product</option>${opts}<option value="other">Other / multiple products</option></select><span class="err"></span></div>
+    <div class="fld"><label for="${id('grade')}">Required grade / specification</label><input type="text" id="${id('grade')}" name="grade" placeholder="e.g. marker %, mesh size, solvent limits"></div>
+    <div class="fld"><label for="${id('qty')}">Required quantity</label><div class="row"><input type="text" id="${id('qty')}" name="qty" inputmode="decimal" placeholder="e.g. 500" required><select id="${id('unit')}" name="unit" aria-label="Unit"><option>kg</option><option>MT</option><option>g (sample)</option></select></div><span class="err"></span></div>
+    <div class="fld"><label for="${id('app')}">Application / industry</label><select id="${id('app')}" name="application"><option value="">Select</option>${CUSTOMERS.map(c=>`<option>${c}</option>`).join("")}<option>Other</option></select></div>
+    <div class="fld"><label for="${id('time')}">Target purchase timeline</label><select id="${id('time')}" name="timeline"><option value="">Select</option><option>Immediate (within 30 days)</option><option>1–3 months</option><option>3–6 months</option><option>Evaluating / no fixed date</option></select></div>
+    <fieldset class="fld full"><legend>Sample required?</legend><div class="seg">
+      <label><input type="radio" name="${id('sample')}" id="${id('sample-y')}" value="Yes" ${type==="Sample"?"checked":""}> Yes</label>
+      <label><input type="radio" name="${id('sample')}" id="${id('sample-n')}" value="No" ${type!=="Sample"?"checked":""}> No</label>
+    </div></fieldset>
+    <div class="fld full"><label for="${id('msg')}">Message / additional requirements <span class="opt">optional</span></label><textarea id="${id('msg')}" name="message" placeholder="Packing preference, documents needed, destination port, regulatory requirements…"></textarea></div>
+    <div class="fld full"><label for="${id('file')}">Attach your specification <span class="opt">optional · PDF, DOC/DOCX, XLS/XLSX · max 5 MB</span></label><div class="file"><input type="file" id="${id('file')}" name="spec" accept=".pdf,.doc,.docx,.xls,.xlsx"></div><span class="err"></span></div>
+    <div class="fld full"><label class="consent"><input type="checkbox" id="${id('consent')}" name="consent" required> <span>I agree to be contacted by Phyto Elements about this enquiry and acknowledge the <a href="#privacy">privacy notice</a>.</span></label><span class="err"></span></div>
+    <div class="submit-row"><small>Enquiries go to sales@phytoelements.in. Sample requests are copied to samples@phytoelements.in.</small><button class="btn" type="submit">Send enquiry</button></div>
+  </form>`;
+}
+
+function formSection({pre="",type="Quote",eyebrow="Enquiry",title="Tell us what you need",band=false,idAttr="enquire"}={}){
+  return `<section id="${idAttr}" class="${band?'band':'sunk'}"><div class="wrap form-shell">
+    <div class="form-aside">
+      <span class="eyebrow">${eyebrow}</span>
+      <h2>${title}</h2>
+      <p class="${band?'':'muted'}">State the product, grade and quantity you need. We reply with the specification, sample availability and a quotation from one point of contact.</p>
+      <ol class="steps">
+        <li><span>We confirm the specification and grade against your requirement.</span></li>
+        <li><span>Where requested, a sample is dispatched with its supporting documents.</span></li>
+        <li><span>You receive a quotation with packing, MOQ and lead time.</span></li>
+      </ol>
+      ${note("Form submissions currently show a confirmation only. Connect to the CMS/CRM, add spam protection (e.g. reCAPTCHA/Turnstile) and route to sales@ / samples@ before launch.")}
+    </div>
+    ${enquiryForm(pre,type)}
+  </div></section>`;
+}
+
+function mailsBlock(){
+  return `<div class="mails">${MAILS.map(m=>`<div class="mail"><span class="addr">${m[0]}</span><div><div class="fn">${m[1]}</div><p>${m[2]}</p></div><button class="copy" type="button" data-copy="${m[0]}">Copy</button></div>`).join("")}</div>`;
+}
+
+/* ---------- views ---------- */
+const V = {};
+V.home = () => `
+<section class="hero"><div class="wrap hero-grid">
+  <div>
+    <span class="eyebrow">Bulk plant extracts · Manufactured in India</span>
+    <h1>Bulk Plant Extracts for <em>Global Markets</em></h1>
+    <p class="lede">Phyto Elements manufactures bulk plant extracts for Indian and global B2B customers through controlled processing, defined specifications, batch quality documentation and commercially reliable fulfilment.</p>
+    <div class="ctas"><a class="btn" href="#sample">Request a Sample</a><a class="btn ghost" href="#products">Explore Products</a></div>
+    <div class="hero-meta"><span>Six focus extracts</span><span>Batch-linked COA</span><span>India &amp; export supply</span></div>
+  </div>
+  ${batchTag(byId.garcinia)}
+</div></section>
+
+<section class="sunk"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Who we are</span><h2>A focused manufacturer of specification-driven botanical ingredients</h2>
+  <p class="lede">We develop and manufacture standardized extracts for ingredient distributors, nutraceutical companies, formulators and contract manufacturers, supported by product specifications, samples, quality documentation and commercial fulfilment.</p></div>
+  <div class="values">${VALUES.map(v=>`<div><h3>${v[0]}</h3><p>${v[1]}</p></div>`).join("")}</div>
+</div></section>
+
+${flagshipBand()}
+
+<section><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Manufacturing portfolio</span><h2>Six extracts, each made to an approved specification</h2>
+  <p class="lede">Every product has its own page, specification summary and enquiry form. Additional extracts are added only after process development, quality validation and commercial evaluation.</p></div>
+  <div class="cards">${PRODUCTS.map(card).join("")}</div>
+</div></section>
+
+<section class="sunk"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">From botanicals to batch</span><h2>Five stages between raw material and your dock</h2></div>
+  ${processBlock()}
+</div></section>
+
+<section><div class="wrap two">
+  <div class="stack">
+    <span class="eyebrow">Why work with Phyto Elements</span>
+    <h2 style="font-size:clamp(1.9rem,3.6vw,2.75rem)">Every document traces back to the batch you receive</h2>
+    <p class="lede">Our operating role covers product and process development, raw-material qualification, controlled extraction, standardization, quality testing, batch release, packing and fulfilment. Customer communication and documentation link directly to the manufactured batch and its approved specification.</p>
+    <div><a class="btn ghost" href="#operations">See all nine operating functions</a></div>
+  </div>
+  <ul class="list">
+    ${FUNCS.slice(0,9).map(f=>`<li>${f[0]}</li>`).join("")}
+  </ul>
+</div></section>
+
+<section class="band"><div class="wrap two">
+  <div class="stack">
+    <span class="eyebrow">Manufacturing &amp; quality</span>
+    <h2 style="font-size:clamp(1.9rem,3.6vw,2.75rem)">Controlled extract manufacturing</h2>
+  </div>
+  <div class="stack">
+    <p class="lede">Phyto Elements manufactures bulk botanical extracts using controlled, product-specific processing designed around approved specifications and customer requirements. Each commercial batch is supported by manufacturing records, applicable quality tests, approved packing and a batch-linked Certificate of Analysis.</p>
+    <div><a class="btn ghost" href="#manufacturing">Manufacturing &amp; Quality</a></div>
+    ${note("Certifications (GMP, ISO, FSSAI, Halal, Kosher, organic), capacity, equipment and in-house testing are intentionally absent. Add only once verified with records.")}
+  </div>
+</div></section>
+
+${formSection({})}
+
+<section><div class="wrap two">
+  <div class="stack"><span class="eyebrow">Contact</span><h2 style="font-size:clamp(1.9rem,3.6vw,2.75rem)">Write to the right desk</h2><p class="muted">Five role-based inboxes keep quotations, samples, documents and orders organised.</p></div>
+  ${mailsBlock()}
+</div>
+<div class="wrap" style="margin-top:28px">${note("Brief item 10: referral or trust content (customers, countries, years in operation) only when supported by evidence. No section is shown until then.")}</div>
+</section>`;
+
+function flagshipBand(){
+  const p = byId.garcinia;
+  return `<section class="band"><div class="wrap flag-grid">
+    <div>
+      <span class="eyebrow">Flagship · ${p.code}</span>
+      <h2>Garcinia Cambogia Extract</h2>
+      <p class="lede">${p.intro}</p>
+      <div class="flag-specs">
+        <div><small>Botanical source</small><span class="rv"><i>Garcinia gummi-gutta</i></span></div>
+        <div><small>Plant part</small><span class="rv">${p.part}</span></div>
+        <div><small>Quality marker</small><span>Hydroxycitric Acid (HCA)</span></div>
+        <div><small>Grade</small><span>Per approved specification</span></div>
+      </div>
+      <div class="ctas" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:28px"><a class="btn" href="#garcinia">View Garcinia Cambogia</a><a class="btn ghost" href="#sample">Request a sample</a></div>
+    </div>
+    <div class="flag-art"><canvas id="rind" aria-label="Illustration of a Garcinia fruit in cross-section" role="img"></canvas><div class="cap"><span>G. gummi-gutta · fruit</span><span>HCA</span></div></div>
+  </div></section>`;
+}
+
+V.about = () => `
+<div class="ph"><div class="wrap"><div class="crumbs"><a href="#home">Home</a>/<span>About</span></div>
+  <h1>About Phyto Elements</h1>
+  <p class="lede">An India-based B2B manufacturer of bulk plant extracts and specialty botanical ingredients for Indian and global markets.</p></div></div>
+<section><div class="wrap two">
+  <div class="prose">
+    <p>Phyto Elements develops and manufactures standardized extracts for ingredient distributors, nutraceutical companies, formulators, contract manufacturers and other professional buyers, supported by product specifications, samples, quality documentation and commercial fulfilment.</p>
+    <p>Our initial manufacturing portfolio is built around six extracts with applications across nutraceutical, wellness, food, cosmetic and personal-care markets. Garcinia Cambogia Extract is the flagship product. Curcumin, Ashwagandha, Boswellia, Bakuchiol and Bacopa form the remaining focus portfolio.</p>
+    <p>Additional extracts are considered only after process development, quality validation and commercial evaluation.</p>
+  </div>
+  <div class="stack">
+    <div class="tag" style="padding:24px"><span class="eyebrow">Positioning</span><p style="font-family:var(--f-display);font-size:1.4rem;line-height:1.3;margin-top:10px;letter-spacing:-.01em">Bulk plant extracts for Indian and global B2B customers, through controlled processing, defined specifications, batch quality documentation and commercially reliable fulfilment.</p></div>
+    <p class="callout">Tagline: <b style="color:var(--ink)">Botanical Ingredients for Global Markets</b></p>
+  </div>
+</div></section>
+<section class="sunk"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Who we serve</span><h2>Core customer groups</h2></div>
+  <div class="cards">${CUSTOMERS.map((c,i)=>`<div class="card" style="grid-template-rows:auto;cursor:default"><span class="code">${String(i+1).padStart(2,"0")}</span><h3 style="font-size:1.15rem">${c}</h3></div>`).join("")}</div>
+</div></section>
+<section><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">How we create value</span><h2>What buyers get from working with us</h2></div>
+  <div class="values">${VALUES.map(v=>`<div><h3>${v[0]}</h3><p>${v[1]}</p></div>`).join("")}</div>
+</div></section>`;
+
+V.products = () => `
+<div class="ph"><div class="wrap"><div class="crumbs"><a href="#home">Home</a>/<span>Products</span></div>
+  <h1>Products</h1>
+  <p class="lede">Six bulk extracts, each manufactured to an approved specification. Select a product for its specification summary, documents and enquiry form.</p></div></div>
+<section><div class="wrap">
+  <div style="overflow-x:auto;margin-bottom:48px" class="sheet">
+    <table style="min-width:720px">
+      <thead><tr><th style="width:auto">#</th><th style="width:auto">Product</th><th style="width:auto">Portfolio role</th><th style="width:auto">Quality marker / grade basis</th><th style="width:auto">Primary B2B application</th></tr></thead>
+      <tbody>${PRODUCTS.map(p=>`<tr><td class="mono">${p.code.slice(3)}</td><td><a href="#${p.id}" style="font-weight:600">${p.name}</a></td><td>${p.role.replace(" product","")}</td><td>${p.marker}</td><td>${p.area}</td></tr>`).join("")}</tbody>
+    </table>
+  </div>
+  <div class="cards">${PRODUCTS.map(card).join("")}</div>
+</div></section>
+${formSection({title:"Enquire about any product"})}`;
+
+function productView(p){
+  const others = PRODUCTS.filter(o=>o.id!==p.id);
+  const R = `<span class="req">Shared on request</span>`;
+  return `
+<div class="ph"><div class="wrap">
+  <div class="crumbs"><a href="#home">Home</a>/<a href="#products">Products</a>/<span>${p.short}</span></div>
+  <div class="pp-head" style="margin-top:14px">
+    <div>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="chip">${p.code}</span><span class="chip ${p.flag?'flag':''}">${p.role}</span></div>
+      <h1>${p.name}</h1>
+      <p class="lede">${p.intro}</p>
+    </div>
+    <div class="actions">
+      <a class="btn" href="#${p.id}" data-type="Specifications">Request Specifications</a>
+      <a class="btn ghost" href="#${p.id}" data-type="Sample">Request a Sample</a>
+      <a class="btn ghost" href="#${p.id}" data-type="Quote">Request a Quote</a>
+    </div>
+  </div>
+</div></div>
+<section><div class="wrap pp-grid">
+  <div class="stack">
+    <div class="sheet">
+      <div class="sheet-h"><span>PRODUCT SPECIFICATION SUMMARY · ${p.code}</span><span>Representative · not a batch COA</span></div>
+      <div style="overflow-x:auto"><table>
+        <tr><th>Product</th><td>${p.name}</td></tr>
+        <tr><th>Botanical source</th><td class="rv"><i>${p.source}</i></td></tr>
+        <tr><th>Plant part</th><td class="rv">${p.part}</td></tr>
+        <tr><th>Extract type</th><td>${R}</td></tr>
+        <tr><th>Quality marker</th><td>${p.marker}</td></tr>
+        <tr><th>Grade / assay range</th><td>${R}</td></tr>
+        <tr><th>Appearance</th><td>${R}</td></tr>
+        <tr><th>Packing</th><td>${R}</td></tr>
+        <tr><th>MOQ</th><td>${R}</td></tr>
+        <tr><th>Indicative lead time</th><td>${R}</td></tr>
+      </table></div>
+      <div class="sheet-f">Grade, assay and physical parameters are confirmed in the product specification sheet. Batch-specific results appear only in the batch Certificate of Analysis.</div>
+    </div>
+    ${note(`${esc(p.note)}<ul><li>Publish only grades Phyto Elements can manufacture and supply consistently.</li><li>Replace "Shared on request" with verified values (assay range, appearance, packing, MOQ, lead time) once approved.</li></ul>`)}
+  </div>
+  <aside class="side">
+    <div><h3>Application categories</h3><div class="apps">${p.apps.map(a=>`<span>${a}</span>`).join("")}</div><p class="muted" style="font-size:.84rem;margin-top:10px">Supplied as an ingredient for professional formulation. No disease-treatment claims are made for this product.</p></div>
+    <div><h3>Documents</h3><div class="docs">
+      ${[["Specification sheet","SPEC","Email on request"],["Representative COA","COA","Labelled representative"],["Batch COA","COA","After batch identification"],["Safety Data Sheet","SDS","Where applicable"]].map(d=>`<div class="doc"><span class="ico">${d[1]}</span><div><h4>${d[0]}</h4><p>${d[2]}</p></div></div>`).join("")}
+    </div><p class="muted" style="font-size:.84rem;margin-top:10px">Documents are sent from <span class="mono">quality@phytoelements.in</span>.</p></div>
+    ${batchTag(p)}
+  </aside>
+</div></section>
+${formSection({pre:p.id,eyebrow:`Enquire · ${p.short}`,title:`Request ${p.short} specifications, samples or a quote`})}
+<section><div class="wrap"><div class="stack"><span class="eyebrow">Other extracts</span><div class="others">${others.map(o=>`<a href="#${o.id}"><span class="swatch" style="--sw:${o.sw}"></span>${o.name}</a>`).join("")}</div></div></div></section>`;
+}
+PRODUCTS.forEach(p=>V[p.id]=()=>productView(p));
+
+V.operations = () => `
+<div class="ph"><div class="wrap"><div class="crumbs"><a href="#home">Home</a>/<span>Operations</span></div>
+  <h1>Operations</h1>
+  <p class="lede">Our operating role as an extract manufacturer runs from product and process development through to domestic and export fulfilment. Documentation is linked to the manufactured batch and its approved specification.</p></div></div>
+<section><div class="wrap"><ol class="funcs">${FUNCS.map(f=>`<li><h3>${f[0]}</h3><p>${f[1]}</p></li>`).join("")}</ol></div></section>
+<section class="band"><div class="wrap two">
+  <div class="stack"><span class="eyebrow">One interface</span><h2 style="font-size:clamp(1.9rem,3.6vw,2.6rem)">Specification, sample, price, packing and documents through one point of contact</h2></div>
+  <div class="stack"><p class="lede">Technical and commercial records are exchanged by email: specifications, Certificates of Analysis, quotations, purchase orders and shipment documents. No batch COA is sent without confirming the correct product and batch reference.</p><div><a class="btn" href="#contact">Contact our team</a></div></div>
+</div></section>`;
+
+V.manufacturing = () => `
+<div class="ph"><div class="wrap"><div class="crumbs"><a href="#home">Home</a>/<span>Manufacturing &amp; Quality</span></div>
+  <h1>Manufacturing &amp; Quality</h1>
+  <p class="lede">Controlled, product-specific processing designed around approved specifications and customer requirements.</p></div></div>
+<section><div class="wrap two">
+  <div class="prose">
+    <h2 style="font-size:1.8rem">Controlled extract manufacturing</h2>
+    <p>Phyto Elements manufactures bulk botanical extracts using controlled, product-specific processing designed around approved specifications and customer requirements.</p>
+    <p>Each commercial batch is supported by defined manufacturing records, applicable quality tests, approved packing and a batch-linked Certificate of Analysis.</p>
+  </div>
+  <div class="stack">
+    ${note(`Verify before going live:<ul><li>Manufacturing-site legal identity and operating authority</li><li>Location and legal name of the manufacturing entity</li><li>Production capacity and equipment claims</li><li>GMP, ISO, FSSAI, organic, Halal, Kosher or other certifications</li><li>In-house vs third-party testing capability</li><li>Extraction solvents and process technologies</li><li>Batch traceability, test panels and release procedures</li><li>Historical volumes, customers, countries, years in operation</li></ul>`)}
+    <p class="callout">Certifications, capacity and testing infrastructure will be listed here as they are verified and documented.</p>
+  </div>
+</div></section>
+<section class="sunk"><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">From botanicals to batch</span><h2>The five-stage process</h2></div>
+  ${processBlock()}
+</div></section>
+<section><div class="wrap">
+  <div class="sec-head"><span class="eyebrow">Quality documentation</span><h2>Representative information and batch-certified information are kept separate</h2></div>
+  <div class="kv">
+    <div><h3>Specification sheet</h3><p>Defines the grade, marker compound, physical parameters and limits we manufacture to.</p></div>
+    <div><h3>Representative COA</h3><p>Clearly labelled as representative. Shows the test panel and typical results for evaluation.</p></div>
+    <div><h3>Batch-specific COA</h3><p>Issued against the identified batch, matched to its batch reference, and sent with the shipment documents.</p></div>
+  </div>
+</div></section>`;
+
+V.resources = () => `
+<div class="ph"><div class="wrap"><div class="crumbs"><a href="#home">Home</a>/<span>Documents / Resources</span></div>
+  <h1>Documents &amp; Resources</h1>
+  <p class="lede">Technical and commercial documents are shared by email so each one matches the product, grade and batch you are evaluating.</p></div></div>
+<section><div class="wrap two">
+  <div class="docs">${DOCS.map(d=>`<div class="doc"><span class="ico">${d[1]}</span><div><h4>${d[0]}</h4><p>${d[2]}</p></div><span class="how">${d[3]}</span></div>`).join("")}</div>
+  <div class="stack">
+    <h2 style="font-size:1.6rem">Request a document</h2>
+    <p class="muted">Use the enquiry form and choose "Request specifications", or write directly to the quality desk.</p>
+    <div class="mails">${MAILS.filter(m=>/quality|info/.test(m[0])).map(m=>`<div class="mail"><span class="addr">${m[0]}</span><div><div class="fn">${m[1]}</div></div><button class="copy" type="button" data-copy="${m[0]}">Copy</button></div>`).join("")}</div>
+    <div><a class="btn" href="#sample" data-type="Specifications">Request specifications</a></div>
+    ${note("Company profile PDF and per-product spec sheets can move to direct downloads once approved. Batch COAs stay email-only.")}
+  </div>
+</div></section>`;
+
+V.sample = () => `
+<div class="ph"><div class="wrap"><div class="crumbs"><a href="#home">Home</a>/<span>Request a Sample</span></div>
+  <h1>Request a Sample</h1>
+  <p class="lede">Tell us the product, grade and application. We confirm the specification, then dispatch a sample with its supporting documents.</p></div></div>
+${formSection({type:"Sample",eyebrow:"Sample request",title:"Sample request form",idAttr:"enquire"})}`;
+
+V.contact = () => `
+<div class="ph"><div class="wrap"><div class="crumbs"><a href="#home">Home</a>/<span>Contact</span></div>
+  <h1>Contact</h1>
+  <p class="lede">Write to the desk that fits your enquiry, or use the form below.</p></div></div>
+<section><div class="wrap two">
+  ${mailsBlock()}
+  <div class="stack">
+    <div class="tag" style="padding:24px;display:grid;gap:14px">
+      <span class="eyebrow">Company</span>
+      <div style="display:flex;gap:12px;align-items:center"><svg style="width:42px;height:42px" aria-hidden="true"><use href="#mark"/></svg><div><div style="font-family:var(--f-display);font-size:1.3rem;font-weight:600">Phyto Elements</div><div class="muted" style="font-family:var(--f-body)">Hyderabad, India</div></div></div>
+      <div class="muted rv" style="font-family:var(--f-body);font-size:.92rem">Registered address and legal entity name published after verification.</div>
+      <div class="mono" style="font-size:.86rem">phytoelements.in</div>
+    </div>
+    ${note("Confirm the city/address for publication. 'Hyderabad' is a placeholder.")}
+  </div>
+</div></section>
+${formSection({title:"Send an enquiry"})}`;
+
+V.privacy = () => `
+<div class="ph"><div class="wrap"><div class="crumbs"><a href="#home">Home</a>/<span>Privacy notice</span></div><h1>Privacy notice</h1></div></div>
+<section><div class="wrap prose">
+  <p>Phyto Elements collects the details you submit through enquiry and sample-request forms (name, company, business email, phone, country, product and order requirements, and any file you attach) to respond to your enquiry, prepare samples, quotations and documents, and manage any resulting order.</p>
+  <p>Enquiry data is stored securely in our website administration system or CRM and is accessible only to staff handling your enquiry. We do not sell your information.</p>
+  <p>To access, correct or delete your information, write to <span class="mono">info@phytoelements.in</span>.</p>
+  ${note("Draft text. Have this reviewed for DPDP Act 2023 (India) and GDPR where EU buyers are targeted; add cookie controls when analytics are enabled.")}
+</div></section>`;
+
+/* ---------- router ---------- */
+const app = document.getElementById("app");
+function route(){
+  const raw = (location.hash||"#home").slice(1);
+  const key = V[raw] ? raw : (raw==="enquire" ? current : "home");
+  if(raw==="enquire"){ document.getElementById("enquire")?.scrollIntoView(); return; }
+  current = key;
+  formCount = 0;
+  app.innerHTML = `<div class="view">${V[key]()}</div>`;
+  document.title = key==="home" ? "Phyto Elements" : "Phyto Elements";
+  document.querySelectorAll(".nav a").forEach(a=>{
+    const h=a.getAttribute("href").slice(1);
+    const on = h===key || (h==="products" && byId[key] && key!=="garcinia");
+    on ? a.setAttribute("aria-current","page") : a.removeAttribute("aria-current");
+  });
+  nav.classList.remove("open"); menuBtn.setAttribute("aria-expanded","false");
+  window.scrollTo(0,0);
+  if(key==="home") drawRind();
+}
+let current="home";
+const nav=document.getElementById("nav"), menuBtn=document.getElementById("menuBtn");
+menuBtn.onclick=()=>{const o=nav.classList.toggle("open");menuBtn.setAttribute("aria-expanded",o)};
+window.addEventListener("hashchange",route);
+
+/* CTA buttons that set enquiry type and jump to form */
+document.addEventListener("click",e=>{
+  const a=e.target.closest("a[data-type]");
+  if(a){
+    const t=a.dataset.type;
+    const target=a.getAttribute("href").slice(1);
+    if(target!==current && V[target]){ return setTimeout(()=>setType(t),80); }
+    e.preventDefault(); setType(t);
+  }
+  const c=e.target.closest(".copy");
+  if(c){
+    const txt=c.dataset.copy;
+    const ok=()=>{c.textContent="Copied";c.classList.add("ok");setTimeout(()=>{c.textContent="Copy";c.classList.remove("ok")},1600)};
+    const fallback=()=>{const s=c.parentElement.querySelector(".addr");const r=document.createRange();r.selectNodeContents(s);const sel=getSelection();sel.removeAllRanges();sel.addRange(r);c.textContent="Selected";setTimeout(()=>c.textContent="Copy",1600)};
+    try{navigator.clipboard.writeText(txt).then(ok,fallback)}catch(_){fallback()}
+  }
+});
+function setType(t){
+  const f=document.querySelector("form.enq"); if(!f) return;
+  const r=f.querySelector(`input[value="${t}"]`); if(r) r.checked=true;
+  if(t==="Sample"){const y=f.querySelector('input[id$="sample-y"]'); if(y) y.checked=true;}
+  document.getElementById("enquire")?.scrollIntoView({behavior:"smooth"});
+  setTimeout(()=>f.querySelector('input[name="name"]')?.focus({preventScroll:true}),500);
+}
+
+/* form validation + confirmation */
+document.addEventListener("submit",e=>{
+  const f=e.target.closest("form.enq"); if(!f) return;
+  e.preventDefault();
+  let bad=null;
+  f.querySelectorAll(".fld").forEach(x=>x.classList.remove("bad"));
+  f.querySelectorAll(".err").forEach(x=>x.textContent="");
+  const fail=(el,msg)=>{const fld=el.closest(".fld");fld.classList.add("bad");const er=fld.querySelector(".err");if(er)er.textContent=msg;bad=bad||el};
+  f.querySelectorAll("[required]").forEach(el=>{
+    if(el.type==="checkbox"? !el.checked : !el.value.trim()) fail(el, el.type==="checkbox"?"Please confirm to continue.":"Required.");
+  });
+  const em=f.querySelector('input[type=email]');
+  if(em.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value)) fail(em,"Enter a valid email address, e.g. name@company.com.");
+  const ph=f.querySelector('input[type=tel]');
+  if(ph.value && !/^\+\d[\d\s-]{6,}$/.test(ph.value.trim())) fail(ph,"Start with + and the country code, e.g. +91 98xxx xxxxx.");
+  const fi=f.querySelector('input[type=file]');
+  if(fi.files[0]){const fl=fi.files[0];
+    if(!/\.(pdf|docx?|xlsx?)$/i.test(fl.name)) fail(fi,"Use a PDF, Word or Excel file.");
+    else if(fl.size>5*1024*1024) fail(fi,"File is over 5 MB. Please compress it or email it to sales@.");}
+  if(bad){bad.focus();return}
+  const fd=new FormData(f), n=f.dataset.n;
+  const type=f.querySelector(`input[name="f${n}-type"]:checked`).value;
+  const sample=f.querySelector(`input[name="f${n}-sample"]:checked`).value;
+  const prod=fd.get("product"), pName=byId[prod]?.name || "Other / multiple products";
+  const ref="PE-ENQ-"+Date.now().toString(36).toUpperCase().slice(-6);
+  const route = sample==="Yes" ? "sales@ + samples@phytoelements.in" : "sales@phytoelements.in";
+  f.innerHTML=`<div class="done" role="status"><h4>Enquiry received</h4><p>Thank you, ${esc(fd.get("name"))}. Our team will reply to <b>${esc(fd.get("email"))}</b>.</p>
+    <dl><dt>Reference</dt><dd class="mono">${ref}</dd><dt>Request</dt><dd>${type}${sample==="Yes"?" · sample":""}</dd><dt>Product</dt><dd>${esc(pName)}</dd><dt>Quantity</dt><dd>${esc(fd.get("qty"))} ${esc(fd.get("unit"))}</dd><dt>Routed to</dt><dd class="mono">${route}</dd></dl>
+    <p class="muted" style="font-size:.84rem">Preview build: nothing was sent. In the live site this routes to the inboxes above and is stored in the CRM.</p></div>`;
+  f.scrollIntoView({behavior:"smooth",block:"center"});
+});
+
+/* review toggle */
+const rb=document.getElementById("reviewBtn");
+rb.onclick=()=>{const on=document.body.classList.toggle("review");rb.setAttribute("aria-pressed",on);try{localStorage.setItem("pe-review",on?"1":"0")}catch(_){}};
+try{if(localStorage.getItem("pe-review")==="1"){document.body.classList.add("review");rb.setAttribute("aria-pressed","true")}}catch(_){}
+
+try{localStorage.removeItem("pe-mode")}catch(_){}
+
+/* colour route switcher */
+function setRoute(r){
+  r=["greenlight","greens","bluelight","bluevivid","bluegreen","bluedark","limeblue","gradient"].includes(r)?r:"gradient";
+  document.documentElement.setAttribute("data-route",r);
+  document.querySelectorAll(".route-pick button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.route===r));
+  try{localStorage.setItem("pe-route-default-8",r)}catch(_){}
+  if(typeof current!=="undefined" && current==="home") drawRind();
+}
+document.querySelectorAll(".route-pick button").forEach(b=>b.onclick=()=>setRoute(b.dataset.route));
+let savedRoute="gradient"; try{savedRoute=localStorage.getItem("pe-route-default-8")||"gradient"}catch(_){}
+setRoute(savedRoute);
+
+/* footer products */
+document.getElementById("footProducts").innerHTML=PRODUCTS.map(p=>`<li><a href="#${p.id}">${p.name}</a></li>`).join("");
+
+/* Garcinia cross-section illustration (canvas) */
+function drawRind(){
+  const c=document.getElementById("rind"); if(!c) return;
+  const r=c.getBoundingClientRect(), d=Math.min(2,window.devicePixelRatio||1);
+  const W=c.width=Math.max(300,r.width*d), H=c.height=Math.max(300,r.height*d);
+  const g=c.getContext("2d"); const cx=W/2, cy=H*.47, R=Math.min(W,H)*.34;
+  g.clearRect(0,0,W,H);
+  // faint grid like a lab sheet
+  const cs=getComputedStyle(document.documentElement); const lab=cs.getPropertyValue("--on-band-muted").trim()||"#b4c8bb";
+  g.save(); g.globalAlpha=.12; g.strokeStyle=lab; g.lineWidth=1;
+  for(let x=0;x<W;x+=W/16){g.beginPath();g.moveTo(x,0);g.lineTo(x,H);g.stroke()}
+  for(let y=0;y<H;y+=H/16){g.beginPath();g.moveTo(0,y);g.lineTo(W,y);g.stroke()}
+  g.restore();
+  const lobes=8;
+  const shape=(rad,wob)=>{g.beginPath();for(let i=0;i<=360;i++){const a=i*Math.PI/180;const k=rad*(1+wob*Math.cos(lobes*a));const x=cx+k*Math.cos(a),y=cy+k*Math.sin(a);i?g.lineTo(x,y):g.moveTo(x,y)}g.closePath()};
+  // rind
+  shape(R,.045); g.fillStyle="#d9a441"; g.fill();
+  shape(R*.93,.045); g.fillStyle="#f0c766"; g.fill();
+  // flesh
+  shape(R*.78,.05); g.fillStyle="#f7e6b3"; g.fill();
+  // segments
+  for(let i=0;i<lobes;i++){
+    const a=(i+.5)*2*Math.PI/lobes;
+    g.save(); g.translate(cx,cy); g.rotate(a);
+    g.beginPath(); g.ellipse(R*.42,0,R*.26,R*.13,0,0,Math.PI*2);
+    g.fillStyle="#eccf84"; g.fill();
+    g.beginPath(); g.ellipse(R*.44,0,R*.1,R*.055,0,0,Math.PI*2);
+    g.fillStyle="#7a5a22"; g.fill();
+    g.restore();
+    g.strokeStyle="rgba(150,110,40,.45)"; g.lineWidth=1.5*d;
+    g.beginPath(); g.moveTo(cx,cy); const b=i*2*Math.PI/lobes; g.lineTo(cx+R*.78*Math.cos(b),cy+R*.78*Math.sin(b)); g.stroke();
+  }
+  g.beginPath(); g.arc(cx,cy,R*.08,0,Math.PI*2); g.fillStyle="#e2bc63"; g.fill();
+  // callout to rind
+  const ax=cx+R*.97*Math.cos(-.6), ay=cy+R*.97*Math.sin(-.6);
+  g.strokeStyle=lab; g.lineWidth=1*d;
+  g.beginPath(); g.arc(ax,ay,4*d,0,Math.PI*2); g.stroke();
+  g.beginPath(); g.moveTo(ax+4*d,ay-3*d); g.lineTo(W*.9,H*.12); g.lineTo(W*.96,H*.12); g.stroke();
+  g.fillStyle=lab; g.font=`${11*d}px "JetBrains Mono", monospace`; g.textAlign="right";
+  g.fillText("rind · extraction part",W*.96,H*.1);
+}
+window.addEventListener("resize",()=>{if(current==="home")drawRind()});
+
+route();
+</script>
+
+<style id="theme-refinements">/* Routes 5 and 7: readable text and crisp visual hierarchy. */
+:root:is([data-route="bluegreen"],[data-route="limeblue"],[data-route="gradient"]) body{font-size:18px;line-height:1.65}
+:root:is([data-route="bluegreen"],[data-route="limeblue"],[data-route="gradient"]) :is(h1,h2,h3){color:var(--heading);font-weight:700;text-wrap:balance}
+:root:is([data-route="bluegreen"],[data-route="limeblue"],[data-route="gradient"]) .hero h1{font-weight:700;line-height:1.08}
+:root:is([data-route="bluegreen"],[data-route="limeblue"],[data-route="gradient"]) .hero h1 em{background:none;color:var(--olive);-webkit-text-fill-color:currentColor}
+:root:is([data-route="bluegreen"],[data-route="limeblue"],[data-route="gradient"]) :is(.lede,.muted,.nav a){color:var(--muted)}
+:root:is([data-route="bluegreen"],[data-route="limeblue"],[data-route="gradient"]) .nav a{font-size:1rem;font-weight:600}
+:root:is([data-route="bluegreen"],[data-route="limeblue"],[data-route="gradient"]) :is(.btn,button,select){font-weight:600}
+:root:is([data-route="bluegreen"],[data-route="limeblue"],[data-route="gradient"]) .btn{box-shadow:0 4px 0 var(--heading);border-color:var(--heading)}
+:root:is([data-route="bluegreen"],[data-route="limeblue"],[data-route="gradient"]) .btn.ghost{box-shadow:none}
+:root:is([data-route="bluegreen"],[data-route="limeblue"],[data-route="gradient"]) :is(.card,.tag,.values > div){box-shadow:0 8px 24px -16px var(--heading);border-color:var(--line)}
+:root:is([data-route="bluegreen"],[data-route="limeblue"],[data-route="gradient"]) :is(.card,.values > div){border-top:4px solid var(--accent)}
+:root:is([data-route="bluegreen"],[data-route="limeblue"],[data-route="gradient"]) :is(.card,.values > div):nth-child(even){border-top-color:var(--pop)}
+:root:is([data-route="bluegreen"],[data-route="limeblue"],[data-route="gradient"]) .card:hover{border-color:var(--olive)}
+:root:is([data-route="bluegreen"],[data-route="limeblue"],[data-route="gradient"]) .band{background:linear-gradient(120deg,var(--accent),var(--pop));color:var(--on-band)}
+:root:is([data-route="bluegreen"],[data-route="limeblue"],[data-route="gradient"]) .band :is(h1,h2,h3){color:var(--on-band)}
+:root:is([data-route="bluegreen"],[data-route="limeblue"],[data-route="gradient"]) :is(.eyebrow,.hero-meta,.card dt,.tag dt,.chip){font-size:.8rem;font-weight:600;letter-spacing:.06em}
+:root:is([data-route="bluegreen"],[data-route="limeblue"],[data-route="gradient"]) .band .btn{background:var(--heading);color:var(--surface);box-shadow:none}
+:root:is([data-route="bluegreen"],[data-route="limeblue"],[data-route="gradient"]) .band .btn.ghost{background:transparent;color:var(--on-band);border-color:var(--on-band)}
+:root:is([data-route="bluegreen"],[data-route="limeblue"],[data-route="gradient"]) footer{background:var(--heading);color:var(--surface);--on-band:var(--surface);--on-band-muted:#deedf1}
+:root:is([data-route="bluegreen"],[data-route="limeblue"],[data-route="gradient"]) footer :is(h2,h3){color:var(--surface)}
+:root:is([data-route="bluegreen"],[data-route="limeblue"],[data-route="gradient"]) :focus-visible{outline:3px solid var(--heading);outline-offset:4px}
+:root:is([data-route="bluegreen"],[data-route="limeblue"],[data-route="gradient"]) footer :focus-visible{outline-color:var(--accent)}
+@media(max-width:620px){:root:is([data-route="bluegreen"],[data-route="limeblue"],[data-route="gradient"]) body{font-size:17px}}
+:root[data-route="limeblue"] .btn{background:var(--accent);color:var(--on-accent);border-color:var(--blue);box-shadow:none}
+:root[data-route="limeblue"] .btn:hover{background:var(--accent-hover)}
+:root[data-route="limeblue"] .hero h1 em{color:var(--heading);background:linear-gradient(transparent 58%,var(--pop) 58% 92%,transparent 92%)}
+:root[data-route="limeblue"] .band{background:var(--band-2);color:var(--on-band);border-top:8px solid var(--band);box-shadow:inset 0 2px 0 var(--blue-on-green)}
+:root[data-route="limeblue"] .band :is(h1,h2,h3,p,.lede,.muted){color:var(--on-band)}
+:root[data-route="limeblue"] footer{background:var(--band-2);color:var(--on-band-muted);--on-band:var(--paper);--on-band-muted:var(--paper)}
+:root[data-route="limeblue"] footer :is(h2,h3,h4,a){color:var(--on-band)}
+:root[data-route="gradient"] .btn{background:var(--brand-gradient);color:var(--on-accent);border-color:var(--blue);box-shadow:none}
+:root[data-route="gradient"] .btn:hover{background:var(--brand-gradient-reverse)}
+:root[data-route="gradient"] .hero h1 em{color:var(--heading);background:var(--brand-gradient);background-size:100% 10px;background-position:0 94%;background-repeat:no-repeat}
+:root[data-route="gradient"] .band{background:var(--brand-gradient);color:var(--on-band)}
+:root[data-route="gradient"] .band :is(h1,h2,h3,p,.lede,.muted){color:var(--on-band)}
+:root[data-route="gradient"] footer{background:var(--brand-gradient);color:var(--on-accent);border-top:0;--on-band:var(--on-accent);--on-band-muted:var(--on-accent)}
+:root[data-route="gradient"] footer :is(h2,h3,h4,a){color:var(--on-accent)}
+:root[data-route="gradient"] footer .legal{border-color:#07120A33}
+</style></body></html>

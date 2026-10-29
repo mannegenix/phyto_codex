@@ -1,0 +1,17 @@
+name: Build and validate
+on: [push, pull_request]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      DEPLOYMENT_ENV: preview
+      SEO_INDEXABLE: 'false'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - run: npm run build:cloudflare

@@ -1,0 +1,4 @@
+# Wrangler local secrets, copy to .dev.vars (ignored).
+ANTHROPIC_API_KEY=""
+TURNSTILE_SECRET_KEY=""
+EMAIL_API_KEY=""

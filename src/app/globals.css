@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@import "./prototype.css";
+@import "../config/theme-refinements.css";
+@font-face{font-family:"Bricolage Grotesque";src:url("/fonts/bricolage.woff2") format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:"Hanken Grotesk";src:url("/fonts/hanken.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:"JetBrains Mono";src:url("/fonts/jetbrains.woff2") format("woff2");font-weight:100 800;font-style:normal;font-display:swap}
+body{margin:0}button,input,select,textarea{font:inherit}button,a,input,select,textarea{touch-action:manipulation}
+.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:12px;z-index:100;background:var(--surface);padding:12px}
+main{min-height:60vh}.flag-grid .tag{color:var(--ink)}.tag-top{flex-wrap:wrap}
+.copy-status{font-size:.8rem}.email-draft{grid-column:1/-1;padding:20px;border:1px solid var(--line);border-radius:var(--r)}
+.route-pick button{cursor:pointer}.route-pick{position:static;max-width:var(--wrap);margin:16px auto;flex-wrap:wrap;padding:12px 16px}
+.review-toggle{position:static;margin:0 16px 20px}.review-notes-control{max-width:var(--wrap);margin:auto}
+@media(min-width:1121px) and (max-width:1350px){.nav a{font-size:.82rem!important;padding:8px 6px}.hdr .wrap{gap:12px}}
+@media(max-width:620px){.hero h1{overflow-wrap:break-word}.route-pick button{min-height:44px}.tag-top{gap:8px}.pp-head .actions{width:100%}.mail{overflow-wrap:anywhere}.submit-row{flex-wrap:wrap}.btn{white-space:normal;text-align:center}}
+
+@media(max-width:700px){.route-pick b{display:inline}.route-pick{border-radius:12px}.route-pick button{padding:10px}}
