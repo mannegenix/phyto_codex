@@ -22,11 +22,11 @@ export const media = {
     bacopa: { livingSource: "", plantPart: "", extract: "", desktopPosition: "center", mobilePosition: "center" },
   },
   process: {
-    rawMaterial: "",
-    extraction: "",
-    standardisation: "",
-    testing: "",
-    dispatch: "",
+    sourcing: "/images/quality-sourcing.webp",
+    evaluation: "/images/quality-evaluation.webp",
+    testing: "/images/quality-testing.webp",
+    approval: "/images/quality-approval.webp",
+    dispatch: "/images/quality-dispatch.webp",
   },
   three: { model: "", environment: "", poster: "" },
   // Supply real approved assets; empty values render no media.
