@@ -25,13 +25,16 @@ export function HomeCinema({children,labels=homeLabels,pageLabel='Homepage'}:{ch
    const durations=scenes.map((_,i)=>(i===productScene?count:1)+transition);
    const starts:number[]=[];let total=0;durations.forEach(d=>{starts.push(total);total+=d});
    const anchors=starts.flatMap((start,i)=>i===productScene?Array.from({length:count},(_,n)=>(start+n)/total):[start/total]);anchors.push(1);
+   const nearestAnchorIndex=(value:number)=>anchors.reduce((nearest,anchor,index)=>Math.abs(anchor-value)<Math.abs(anchors[nearest]-value)?index:nearest,0);
+   let settledAnchor=0;
+   const snapToAdjacentAnchor=(value:number)=>{const nearest=nearestAnchorIndex(value);const step=experience.scenes.maximumAnchorStep;const target=gsap.utils.clamp(settledAnchor-step,settledAnchor+step,nearest);return anchors[target]};
    let previous=-1;let previousSlide=-1;
    element.dataset.cinematic='true';
    if(track)track.dataset.scrollLinked='true';
    function measure(){scenes.forEach(scene=>{const body=scene.querySelector<HTMLElement>('.scene-inner');if(!body)return;const overflow=body.scrollHeight>body.clientHeight+3;if(overflow){body.setAttribute('data-lenis-prevent','');body.tabIndex=0}else{body.removeAttribute('data-lenis-prevent');body.tabIndex=-1}})}
    const trigger=ScrollTrigger.create({trigger:element,start:'top top',end:()=>`+=${Math.round(innerHeight*experience.scenes.scrollPerUnitVh/100*total)}`,pin:true,pinSpacing:true,anticipatePin:1,invalidateOnRefresh:true,
-    snap:experience.scenes.snap?{snapTo:anchors,directional:true,duration:{min:.25,max:.65},delay:.18,inertia:false}:undefined,
-    onRefresh:measure,
+    snap:experience.scenes.snap?{snapTo:snapToAdjacentAnchor,directional:experience.scenes.snapDirectional,duration:{min:experience.scenes.snapDurationMinSeconds,max:experience.scenes.snapDurationMaxSeconds},delay:experience.scenes.snapDelaySeconds,inertia:false,onComplete:self=>{settledAnchor=nearestAnchorIndex(self.progress)}}:undefined,
+    onRefresh:self=>{measure();settledAnchor=nearestAnchorIndex(self.progress)},
     onUpdate:self=>{
      const position=self.progress*total;let index=starts.findIndex((start,i)=>position>=start&&position<start+durations[i]);if(index<0)index=scenes.length-1;
      const local=position-starts[index];const mix=index<scenes.length-1?gsap.utils.clamp(0,1,(local-(durations[index]-transition))/transition):0;
@@ -47,7 +50,7 @@ export function HomeCinema({children,labels=homeLabels,pageLabel='Homepage'}:{ch
      if(index===0)element.querySelectorAll<HTMLElement>('.hero-slit').forEach((slit,i)=>gsap.set(slit,{y:[-32,30,-4][i]+(i-1)*local*experience.hero.slitTravelPx,rotationY:(i-1)*(1-local)*experience.hero.slitTiltDegrees}));
     },
    });
-   seek.current=(index,slide=0)=>{index=Math.max(0,Math.min(scenes.length-1,index));const top=trigger.start+(starts[index]+slide)/total*(trigger.end-trigger.start);if(window.dispatchEvent(new CustomEvent('phyto-scroll-to',{detail:{top},cancelable:true})))window.scrollTo({top,behavior:'smooth'})};
+   seek.current=(index,slide=0)=>{index=Math.max(0,Math.min(scenes.length-1,index));const progress=(starts[index]+slide)/total;settledAnchor=nearestAnchorIndex(progress);const top=trigger.start+progress*(trigger.end-trigger.start);if(window.dispatchEvent(new CustomEvent('phyto-scroll-to',{detail:{top},cancelable:true})))window.scrollTo({top,behavior:'smooth'})};
    const requested=(event:Event)=>{const detail=(event as CustomEvent<{id:string;index:number}>).detail;if(track&&detail.id===track.id)seek.current(productScene,detail.index)};
    const resized=new ResizeObserver(measure);scenes.forEach(scene=>{const section=scene.querySelector('section');if(section)resized.observe(section)});
    window.addEventListener('phyto-carousel-request',requested);
