@@ -2,33 +2,33 @@
 import {qualityPage,aboutPage,operationsPage} from './quality-views';
 import {productImages} from '../config/media';
 export const PRODUCTS = [
-  {id:"garcinia",code:"PE-01",name:"Garcinia Cambogia Extract",short:"Garcinia Cambogia",role:"Flagship product",flag:true,
+  {id:"garcinia",name:"Garcinia Cambogia Extract",short:"Garcinia Cambogia",role:"Flagship product",flag:true,
    source:"Garcinia gummi-gutta (syn. Garcinia cambogia)",part:"Fruit rind",marker:"Hydroxycitric Acid (HCA)",
    area:"Nutraceutical and wellness formulations",sw:"#b58b4f",
    apps:["Dietary-supplement formulations","Wellness formulations","Powder and capsule blends","Private-label products"],
    intro:"Our flagship extract, supported by product knowledge, careful evaluation and testing against our standards. Supplied to an agreed specification for professional formulators and ingredient buyers.",
    note:"Confirm botanical nomenclature (G. gummi-gutta vs G. cambogia) and the HCA grades Phyto Elements will commit to."},
-  {id:"curcumin",code:"PE-02",name:"Curcumin Extract",short:"Curcumin",role:"Core product",
+  {id:"curcumin",name:"Curcumin Extract",short:"Curcumin",role:"Core product",
    source:"Curcuma longa",part:"Rhizome",marker:"Curcuminoids",area:"Nutraceuticals, functional foods and colour applications",sw:"#e0a11b",
    apps:["Nutraceutical formulations","Functional foods","Food colour applications","Traditional-product manufacturing"],
    intro:"Standardized turmeric extract for nutraceutical, functional-food and colour applications, supplied against a defined curcuminoid specification.",
    note:"Confirm curcuminoid grade range and whether colour-application grades will be offered at launch."},
-  {id:"ashwagandha",code:"PE-03",name:"Ashwagandha Extract",short:"Ashwagandha",role:"Core product",
+  {id:"ashwagandha",name:"Ashwagandha Extract",short:"Ashwagandha",role:"Core product",
    source:"Withania somnifera",part:"Root",marker:"Withanolides",area:"Nutraceutical and wellness formulations",sw:"#b39a73",
    apps:["Nutraceutical formulations","Wellness formulations","Ayurvedic products","Private-label products"],
    intro:"Root extract standardized to withanolides for nutraceutical, wellness and Ayurvedic-product manufacturers.",
    note:"Confirm plant part (root only vs root + leaf) and withanolide test method."},
-  {id:"boswellia",code:"PE-04",name:"Boswellia Extract",short:"Boswellia",role:"Core product",
+  {id:"boswellia",name:"Boswellia Extract",short:"Boswellia",role:"Core product",
    source:"Boswellia serrata",part:"Oleo-gum resin",marker:"Boswellic acids / AKBA, depending on grade",area:"Nutraceutical formulations",sw:"#d8c79c",
    apps:["Nutraceutical formulations","Joint-support category blends","Ayurvedic products","Private-label products"],
    intro:"Resin extract offered by boswellic-acid or AKBA grade, matched to the formulator's specification.",
    note:"Confirm which grades (total boswellic acids vs AKBA-enriched) are manufactured. Review 'joint-support category' wording for claims compliance."},
-  {id:"bakuchiol",code:"PE-05",name:"Bakuchiol Extract",short:"Bakuchiol",role:"Specialty product",
+  {id:"bakuchiol",name:"Bakuchiol Extract",short:"Bakuchiol",role:"Specialty product",
    source:"Psoralea corylifolia (Babchi)",part:"Seed",marker:"Bakuchiol assay, depending on grade",area:"Cosmetic and personal-care formulations",sw:"#c9a54e",
    apps:["Skin-care formulations","Cosmetic actives","Personal-care products","Contract cosmetic manufacturing"],
    intro:"A specialty ingredient for cosmetic and personal-care formulators, supplied by bakuchiol assay grade.",
    note:"Brief flags Bakuchiol specifically: source terminology may differ by raw-material vendor (Psoralea corylifolia / Cullen corylifolium). QA to confirm before publishing."},
-  {id:"bacopa",code:"PE-06",name:"Bacopa Extract",short:"Bacopa",role:"Core product",
+  {id:"bacopa",name:"Bacopa Extract",short:"Bacopa",role:"Core product",
    source:"Bacopa monnieri",part:"Whole herb / aerial parts",marker:"Bacosides",area:"Nutraceutical and wellness formulations",sw:"#8d7f55",
    apps:["Nutraceutical formulations","Wellness formulations","Ayurvedic products","Private-label products"],
    intro:"Herb extract standardized to bacosides for nutraceutical, wellness and Ayurvedic-product manufacturers.",
@@ -55,7 +55,7 @@ const FUNCS = [
  ["Domestic and export fulfilment","Coordinate quotations, orders, dispatch and customer support."]
 ];
 const VALUES = [
-  ["Focused portfolio","Six carefully selected extracts, with the same commitment to quality across the portfolio."],
+  ["Focused portfolio","A carefully selected and growing extract portfolio, with the same commitment to quality throughout."],
   ["Specification-driven batches","Material is evaluated against an agreed product specification and your requirements."],
   ["One point of contact","Discuss specification, quantity, sample, price, packing, lead time and documents with one team."],
   ["Batch documentation","Specifications, Certificates of Analysis, quotations, POs and shipment documents exchanged by email."],
@@ -85,7 +85,7 @@ const note = (html: string) => `<div class="rnote"><b>Review before launch</b>${
 
 function batchTag(p: typeof PRODUCTS[number]){
   return `<div class="tag">
-    <div class="tag-top"><span class="hole"></span><span>${p.code} · BULK EXTRACT</span><span class="chip ${p.flag?'flag':''}">${esc(p.role)}</span></div>
+    <div class="tag-top"><span class="hole"></span><span>BOTANICAL EXTRACT · BULK SUPPLY</span><span class="chip ${p.flag?'flag':''}">${esc(p.role)}</span></div>
     <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding-right:18px">
       <div style="min-width:0"><div class="tag-name">${esc(p.name)}</div><div class="tag-src rv">${esc(p.source)}</div></div>
     </div>
@@ -101,7 +101,7 @@ function batchTag(p: typeof PRODUCTS[number]){
 
 function card(p: typeof PRODUCTS[number]){
   return `<a class="card" href="#${p.id}">
-    <div class="card-top"><span class="code">${p.code}</span>${p.flag?'<span class="chip flag">Flagship</span>':`<span class="chip">${esc(p.role.replace(" product",""))}</span>`}</div>
+    <div class="card-top"><span class="code">Botanical extract</span>${p.flag?'<span class="chip flag">Flagship</span>':`<span class="chip">${esc(p.role.replace(" product",""))}</span>`}</div>
     <div style="display:flex;gap:14px;align-items:center"><div style="min-width:0"><h3>${esc(p.name)}</h3><div class="bot rv">${esc(p.source.split(" (")[0])}</div></div></div>
     <dl><div><dt>Marker</dt><dd>${esc(p.marker.split(",")[0])}</dd></div><div><dt>Use</dt><dd>${esc(p.area.split(",")[0].replace(" formulations",""))}</dd></div></dl>
     <span class="go">View product &amp; enquire →</span>
@@ -147,7 +147,7 @@ V.home = () => `
     <h1>Bulk Plant Extracts for <em>Global Markets</em></h1>
     <p class="lede">Phyto Elements manufactures bulk plant extracts for Indian and global B2B customers through controlled processing, defined specifications, batch quality documentation and commercially reliable fulfilment.</p>
     <div class="ctas"><a class="btn" href="#sample">Request a Sample</a><a class="btn ghost" href="#products">Explore Products</a></div>
-    <div class="hero-meta"><span>Six focus extracts</span><span>Batch-linked COA</span><span>India &amp; export supply</span></div>
+    <div class="hero-meta"><span>Growing extract portfolio</span><span>Batch-linked COA</span><span>India &amp; export supply</span></div>
   </div>
   ${batchTag(byId.garcinia)}
 </div></section>
@@ -161,13 +161,13 @@ V.home = () => `
 ${flagshipBand()}
 
 <section><div class="wrap">
-  <div class="sec-head"><span class="eyebrow">Product portfolio</span><h2>Six extracts, each supplied to an agreed specification</h2>
-  <p class="lede">Every product has its own page, specification summary and enquiry form. Additional extracts are added only after quality validation and commercial evaluation.</p></div>
+  <div class="sec-head"><span class="eyebrow">Product portfolio</span><h2>Featured extracts, each supplied to an agreed specification</h2>
+  <p class="lede">Every featured product has its own page, specification summary and enquiry form. The portfolio grows as additional extracts complete quality validation and commercial evaluation.</p></div>
   <div class="cards">${PRODUCTS.map(card).join("")}</div>
 </div></section>
 
 <section class="sunk"><div class="wrap">
-  <div class="sec-head"><span class="eyebrow">From botanicals to batch</span><h2>Five stages between sourcing and your dock</h2></div>
+  <div class="sec-head"><span class="eyebrow">From botanicals to batch</span><h2>A considered journey from sourcing to your dock</h2></div>
   ${processBlock()}
 </div></section>
 
@@ -176,7 +176,7 @@ ${flagshipBand()}
     <span class="eyebrow">Why work with Phyto Elements</span>
     <h2 style="font-size:clamp(1.9rem,3.6vw,2.75rem)">Every document traces back to the batch you receive</h2>
     <p class="lede">Our operating role covers extract sourcing, evaluation, quality testing, approval, packing and fulfilment. Customer communication and documentation link directly to the supplied batch and its agreed specification.</p>
-    <div><a class="btn ghost" href="#operations">See all nine operating functions</a></div>
+    <div><a class="btn ghost" href="#operations">See our operating approach</a></div>
   </div>
   <ul class="list">
     ${FUNCS.slice(0,9).map(f=>`<li>${f[0]}</li>`).join("")}
@@ -198,7 +198,7 @@ ${flagshipBand()}
 ${formSection({})}
 
 <section><div class="wrap two">
-  <div class="stack"><span class="eyebrow">Contact</span><h2 style="font-size:clamp(1.9rem,3.6vw,2.75rem)">Write to the right desk</h2><p class="muted">Five role-based inboxes keep quotations, samples, documents and orders organised.</p></div>
+  <div class="stack"><span class="eyebrow">Contact</span><h2 style="font-size:clamp(1.9rem,3.6vw,2.75rem)">Write to the right desk</h2><p class="muted">Dedicated inboxes keep quotations, samples, documents and orders organised.</p></div>
   ${mailsBlock()}
 </div>
 <div class="wrap" style="margin-top:28px">${note("Brief item 10: referral or trust content (customers, countries, years in operation) only when supported by evidence. No section is shown until then.")}</div>
@@ -208,7 +208,7 @@ function flagshipBand(){
   const p = byId.garcinia;
   return `<section class="band"><div class="wrap flag-grid">
     <div>
-      <span class="eyebrow">Flagship · ${p.code}</span>
+      <span class="eyebrow">Flagship botanical extract</span>
       <h2>Garcinia Cambogia Extract</h2>
       <p class="lede">${p.intro}</p>
       <div class="flag-specs">
@@ -230,7 +230,7 @@ V.about = () => `
 <section><div class="wrap two">
   <div class="prose">
     <p>Phyto Elements develops and manufactures standardized extracts for ingredient distributors, nutraceutical companies, formulators, contract manufacturers and other professional buyers, supported by product specifications, samples, quality documentation and commercial fulfilment.</p>
-    <p>Our initial manufacturing portfolio is built around six extracts with applications across nutraceutical, wellness, food, cosmetic and personal-care markets. Garcinia Cambogia Extract is the flagship product. Curcumin, Ashwagandha, Boswellia, Bakuchiol and Bacopa form the remaining focus portfolio.</p>
+    <p>Our growing portfolio serves nutraceutical, wellness, food, cosmetic and personal-care markets. Garcinia Cambogia Extract is the flagship product, supported by featured extracts including Curcumin, Ashwagandha, Boswellia, Bakuchiol and Bacopa.</p>
     <p>Additional extracts are considered only after process development, quality validation and commercial evaluation.</p>
   </div>
   <div class="stack">
@@ -240,7 +240,7 @@ V.about = () => `
 </div></section>
 <section class="sunk"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">Who we serve</span><h2>Core customer groups</h2></div>
-  <div class="cards">${CUSTOMERS.map((c,i)=>`<div class="card" style="grid-template-rows:auto;cursor:default"><span class="code">${String(i+1).padStart(2,"0")}</span><h3 style="font-size:1.15rem">${c}</h3></div>`).join("")}</div>
+  <div class="cards">${CUSTOMERS.map(c=>`<div class="card" style="grid-template-rows:auto;cursor:default"><h3 style="font-size:1.15rem">${c}</h3></div>`).join("")}</div>
 </div></section>
 <section><div class="wrap">
   <div class="sec-head"><span class="eyebrow">How we create value</span><h2>What buyers get from working with us</h2></div>
@@ -250,12 +250,12 @@ V.about = () => `
 V.products = () => `
 <div class="ph"><div class="wrap"><div class="crumbs"><a href="#home">Home</a>/<span>Products</span></div>
   <h1>Products</h1>
-  <p class="lede">Six botanical extracts, selected and evaluated against our quality standards. Explore specifications, supporting documents and sample enquiries.</p></div></div>
+  <p class="lede">Explore our growing portfolio of botanical extracts, selected and evaluated against our quality standards, with specifications, supporting documents and sample enquiries.</p></div></div>
 <section><div class="wrap">
   <div style="overflow-x:auto;margin-bottom:48px" class="sheet">
     <table style="min-width:720px">
-      <thead><tr><th style="width:auto">#</th><th style="width:auto">Product</th><th style="width:auto">Portfolio role</th><th style="width:auto">Quality marker / grade basis</th><th style="width:auto">Primary B2B application</th></tr></thead>
-      <tbody>${PRODUCTS.map(p=>`<tr><td class="mono">${p.code.slice(3)}</td><td><a href="#${p.id}" style="font-weight:600">${p.name}</a></td><td>${p.role.replace(" product","")}</td><td>${p.marker}</td><td>${p.area}</td></tr>`).join("")}</tbody>
+      <thead><tr><th style="width:auto">Product</th><th style="width:auto">Portfolio role</th><th style="width:auto">Quality marker / grade basis</th><th style="width:auto">Primary B2B application</th></tr></thead>
+      <tbody>${PRODUCTS.map(p=>`<tr><td><a href="#${p.id}" style="font-weight:600">${p.name}</a></td><td>${p.role.replace(" product","")}</td><td>${p.marker}</td><td>${p.area}</td></tr>`).join("")}</tbody>
     </table>
   </div>
   <div class="cards">${PRODUCTS.map(card).join("")}</div>
@@ -270,7 +270,7 @@ function productView(p: typeof PRODUCTS[number]){
   <div class="crumbs"><a href="#home">Home</a>/<a href="#products">Products</a>/<span>${p.short}</span></div>
   <div class="pp-head" style="margin-top:14px">
     <div>
-      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="chip">${p.code}</span><span class="chip ${p.flag?'flag':''}">${p.role}</span></div>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="chip">Botanical extract</span><span class="chip ${p.flag?'flag':''}">${p.role}</span></div>
       <h1>${p.name}</h1>
       <p class="lede">${p.intro}</p>
     </div>
@@ -285,7 +285,7 @@ function productView(p: typeof PRODUCTS[number]){
 <section><div class="wrap pp-grid">
   <div class="stack">
     <div class="sheet">
-      <div class="sheet-h"><span>PRODUCT SPECIFICATION SUMMARY · ${p.code}</span><span>Representative · not a batch COA</span></div>
+      <div class="sheet-h"><span>${p.name} · specification summary</span><span>Representative · not a batch COA</span></div>
       <div style="overflow-x:auto"><table>
         <tr><th>Product</th><td>${p.name}</td></tr>
         <tr><th>Botanical source</th><td class="rv"><i>${p.source}</i></td></tr>
@@ -341,7 +341,7 @@ V.manufacturing = () => `
   </div>
 </div></section>
 <section class="sunk"><div class="wrap">
-  <div class="sec-head"><span class="eyebrow">From botanicals to batch</span><h2>The five-stage process</h2></div>
+  <div class="sec-head"><span class="eyebrow">From botanicals to batch</span><h2>Our quality-led process</h2></div>
   ${processBlock()}
 </div></section>
 <section><div class="wrap">
