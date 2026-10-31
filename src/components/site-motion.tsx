@@ -7,13 +7,14 @@ import Lenis from 'lenis';
 import {media} from '../config/media';
 import {experience} from '../config/experience';
 import {motionConfig as config} from '../config/motion';
+const sceneSeekEasing=(t:number)=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
 export function SiteMotion(){const path=usePathname();const [loading,setLoading]=useState(false);
  useEffect(()=>{
   if(!config.enabled||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   gsap.registerPlugin(ScrollTrigger);
   const lenis=config.scroll.smooth?new Lenis({lerp:config.scroll.lerp,autoRaf:false}):null;
   const tick=(time:number)=>lenis?.raf(time*1000);gsap.ticker.add(tick);lenis?.on('scroll',ScrollTrigger.update);
-  const seek=(event:Event)=>{const top=(event as CustomEvent<{top:number}>).detail?.top;if(!Number.isFinite(top))return;event.preventDefault();if(lenis)lenis.scrollTo(top,{duration:experience.scenes.seekDurationSeconds,force:true});else window.scrollTo({top,behavior:'smooth'})};
+  const seek=(event:Event)=>{const top=(event as CustomEvent<{top:number}>).detail?.top;if(!Number.isFinite(top))return;event.preventDefault();if(lenis)lenis.scrollTo(top,{duration:experience.scenes.seekDurationSeconds,easing:sceneSeekEasing,force:true});else window.scrollTo({top,behavior:'smooth'})};
   window.addEventListener('phyto-scroll-to',seek);
   const context=gsap.context(()=>{
    if(document.querySelector('.rich-hero-visual')&&innerWidth>900)gsap.to('.rich-hero-visual',{y:experience.hero.parallaxPx,ease:'none',scrollTrigger:{trigger:'.rich-hero',start:'top top',end:'bottom top',scrub:1}});
